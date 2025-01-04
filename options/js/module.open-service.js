@@ -10,7 +10,7 @@
   chrome.storage.local.get(["nkSetting-openServices"], (result) => {
     if (!result["nkSetting-openServices"]) {
       const DEFAULT_SETTING = {
-        'pkk': false,
+        'nspd-gov': false,
         'egrp': false,
         '2gis': true,
         'google': true,

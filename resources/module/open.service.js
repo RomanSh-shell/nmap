@@ -7,10 +7,16 @@
 (function () {
   const popupShow = window.appChrome.popupShow;
   const services = {
-    "pkk": {
-      "title": "ПКК",
-      "icon": '<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 22"><path d="M0 14h6V8H0zM6 0C2.7 0 0 2.7 0 6h6V0zM0 22c3.3 0 6-2.7 6-6H0v6zM8 0c3.3 0 6 2.7 6 6H8V0zM8 14c3.3 0 6-2.7 6-6H8v6z" fill="#2671D5"></path></svg>',
-      "url": 'https://pkk.rosreestr.ru/#/identify/[lon],[lat]/18/@470200'
+    "nspd-gov": {
+      "title": "Геоинформационный портал",
+      "icon": '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path d="M11.41 3h.56l.6.06c1.46.14 2.88.68 4.09 1.53.36.27.72.53 1.03.86h-6.3c-.28.01-.55.04-.83.08-.46.04-.89.24-1.31.42-.53.25-1.07.51-1.5.9-.43.38-.83.79-1.17 1.24-.28.4-.49.84-.7 1.28-.17.42-.35.85-.4 1.3-.03.33-.07.65-.07.97v6.55h6.55c.52-.03 1.06-.04 1.56-.24.48-.17.93-.4 1.38-.64.2-.11.4-.3.66-.28h3.12c-.1.2-.24.35-.37.5a8.66 8.66 0 0 1-6.3 3.11H3v-9.1A8.82 8.82 0 0 1 6.56 4.7a8.55 8.55 0 0 1 4.3-1.66c.18-.02.36-.04.55-.04Z" fill="url(#a)"/><path d="M10.78 6.66c.23-.11.5-.07.74-.08h9.29c.06 0 .14 0 .19.05.01.13-.1.21-.17.3-.79.79-1.56 1.6-2.34 2.4-.22.19-.39.47-.68.58-.25.11-.54.08-.81.09H7.87c-.1-.01-.24 0-.26-.12 0-.07.05-.12.1-.17.84-.85 1.67-1.72 2.52-2.57.17-.18.32-.39.55-.48Z" fill="url(#b)"/><path d="M19.46 9.92c.12-.12.22-.28.37-.36.3-.02.6 0 .9 0 .09 0 .2-.03.27.04.01.13-.1.21-.17.3l-2.74 2.84c-.2.18-.46.26-.72.26h-9.5c-.08 0-.17 0-.23-.05-.07-.1.02-.2.08-.26l1.45-1.49c.05-.06.13-.08.21-.07h7.86c.36 0 .7-.09 1.03-.2.5-.2.83-.64 1.2-1Z" fill="url(#c)"/><path d="M19.84 12.5c.06-.06.15-.05.23-.05h.74c.06 0 .14-.01.19.05.02.13-.1.21-.17.3l-2.74 2.84c-.2.18-.46.26-.72.26h-9.5c-.1 0-.24 0-.26-.12 0-.08.06-.14.11-.2.46-.45.9-.91 1.35-1.37.07-.09.17-.11.27-.1h7.78c.42.02.83-.07 1.21-.22.45-.2.75-.6 1.1-.94l.41-.45Z" fill="url(#d)"/><defs><linearGradient id="a" x1="18.52" y1="5.43" x2="3.31" y2="20.95" gradientUnits="userSpaceOnUse"><stop stop-color="#4AFFD8"/><stop offset=".29" stop-color="#00CAFF"/><stop offset=".68" stop-color="#2D93FF"/><stop offset="1" stop-color="#007CFF"/></linearGradient><linearGradient id="b" x1="18.52" y1="5.43" x2="3.31" y2="20.95" gradientUnits="userSpaceOnUse"><stop stop-color="#4AFFD8"/><stop offset=".29" stop-color="#00CAFF"/><stop offset=".68" stop-color="#2D93FF"/><stop offset="1" stop-color="#007CFF"/></linearGradient><linearGradient id="c" x1="18.52" y1="5.43" x2="3.31" y2="20.95" gradientUnits="userSpaceOnUse"><stop stop-color="#4AFFD8"/><stop offset=".29" stop-color="#00CAFF"/><stop offset=".68" stop-color="#2D93FF"/><stop offset="1" stop-color="#007CFF"/></linearGradient><linearGradient id="d" x1="18.52" y1="5.43" x2="3.31" y2="20.95" gradientUnits="userSpaceOnUse"><stop stop-color="#4AFFD8"/><stop offset=".29" stop-color="#00CAFF"/><stop offset=".68" stop-color="#2D93FF"/><stop offset="1" stop-color="#007CFF"/></linearGradient></defs></svg>',
+      "calc": (lon, lat) => {
+        const x = lon * (Math.PI / 180) * 6378137;
+        const y = Math.log(Math.tan((Math.PI / 4) + (lat * Math.PI / 180) / 2)) * 6378137;
+
+        return x, y;
+      },
+      "url": 'https://nspd.gov.ru/map?thematic=PKK&zoom=[z]&coordinate_x=[lon]&coordinate_y=[lat]&theme_id=1&is_copy_url=true'
     },
     "egrp": {
       "title": "ЕГРП 365",
@@ -68,7 +74,7 @@
     }
   });
 
-  
+
   /**
    * Открытие панели
    */
@@ -104,6 +110,10 @@
 
         element.on("click", () => {
           let link = services[nameServices].url;
+
+          if (services[nameServices]?.calc) {
+            lon, lat = services[nameServices].calc(lon, lat);
+          }
 
           link = link.replaceAll("[lon]", lon);
           link = link.replaceAll("[lat]", lat);
