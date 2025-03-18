@@ -8,10 +8,10 @@
   const DEFAULT_SETTING = {
     'get-user': true,
     'get-profile': true,
-    'check-address': false,
+    'check-address': true,
     'q-link': false,
     'lock-pattern': true,
-    'tiles': false,
+    'tiles': true,
     'favorite-objects': false,
     'address': true,
     'fr_mos_ru': false,
