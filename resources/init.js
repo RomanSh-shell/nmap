@@ -425,8 +425,8 @@
       return;
     }
 
-    /* Ждем клика по аватарке */
-    $(".nk-user-bar-view__user-icon").on('click', () => {
+    /* Ждем клика по полезным ссылкам */
+    $(".nk-help-view").on('click', () => {
       setTimeout(() => {
         const parent = $("body > div:nth-child(9) > div > div > div > div.nk-menu.nk-menu_theme_islands.nk-menu_size_l > div:nth-child(1)");
 
