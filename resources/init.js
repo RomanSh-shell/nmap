@@ -61,7 +61,7 @@
         title: "Проверка адресов",
         label: {
           street: "Дорога",
-          listAddress: "Номера домов"
+          listAddress: "Список адресов"
         },
         button: {
           cancellation: "Отмена",
@@ -70,7 +70,7 @@
         load: "Идёт проверка",
         row: {
           error: "Недобавленные адреса",
-          not_found: "Несуществующие адреса",
+          not_found: "Адресов нет в списке",
           warning: "Адреса с ошибкой"
         },
         default: {
@@ -87,7 +87,7 @@
           default: defaultError,
           valid: {
             count: "Номера домов должны быть разделены запятыми",
-            road: "Номера домов не должны содержать название дороги"
+            road: "Номера домов в списке не должны содержать название дороги"
           }
         }
       }
@@ -179,7 +179,7 @@
           term: "Выберите любой срок блокировки, но не более 3 дней"
         },
 
-        // Невозможно связаться с пользователем
+                // Невозможно связаться с пользователем
         {
           text: "Добрый день, {user_name}!\n\nК сожалению, я не смог связаться с Вами через [Яндекс.Мессенджер](https://yandex.ru/chat#/). Пожалуйста, снимите ограничение и напишите мне, после чего я сниму блокировку досрочно.",
           height: 192,
@@ -432,22 +432,22 @@
       return;
     }
 
-    /* Ждем клика по полезным ссылкам */
-    $(".nk-help-view").on('click', () => {
+    /* Ждем клика по аватарке */
+    $(".nk-user-bar-view__user-icon").on('click', () => {
       setTimeout(() => {
-        const parent = $("body > div:nth-child(9) > div > div > div > div.nk-menu.nk-menu_theme_islands.nk-menu_size_l > div:nth-child(1)");
+        const parent = $(".nk-user-bar-view__name + .nk-menu .nk-menu__group:first-of-type");
         const id = chrome.runtime.id;
 
         if(!parent.find('div[data-link="chrome-extension://' + id + '/index.html"]').length){
           parent.append('<div class="nk-menu-item nk-menu-item_theme_islands nk-menu-item_size_l" data-link="chrome-extension://' + id + '/index.html" tabindex="-1">Настройки</div>');
           const button = parent.find('div[data-link="chrome-extension://' + id + '/index.html"]');
-  
+
           button.hover(() => {
             button.addClass("nk-menu-item_hovered");
           }, () => {
             button.removeClass("nk-menu-item_hovered");
           });
-  
+
           button.on("click", () => {
             chrome.runtime.sendMessage({method: "openSetting"});
           });

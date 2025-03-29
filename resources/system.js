@@ -11,7 +11,7 @@
     'check-address': false,
     'q-link': false,
     'lock-pattern': true,
-    'tiles': false,
+    'tiles': true,
     'favorite-objects': false,
     'address': true,
     'fr_mos_ru': false,

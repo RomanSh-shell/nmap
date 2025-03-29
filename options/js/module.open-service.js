@@ -11,9 +11,11 @@
     if (!result["nkSetting-openServices"]) {
       const DEFAULT_SETTING = {
         'nspd-gov': false,
-        'egrp': false,
-        '2gis': true,
+        'map-ru': true,
+        'retromap':true,
+        '2gis': false,
         'google': true,
+        'starva': false,
         'osm': false,
         'here': false,
         'wikimapia': false,

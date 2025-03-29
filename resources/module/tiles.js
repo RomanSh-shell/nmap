@@ -34,7 +34,7 @@
       mapElement = $(".ymaps-2-1-79-ground-pane ymaps[style*='z-index: 150']");
     }
     let filterList = [];
-
+    
     for (const nameFilter in text.fulter) {
       const infoFilter = text.fulter[nameFilter];
       filterList.push(nameFilter + "(" + (infoFilter.default / infoFilter.meaning) + infoFilter.unit + ")");
