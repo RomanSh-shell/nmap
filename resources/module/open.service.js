@@ -4,10 +4,7 @@
  * Добавляет возможность перехода на другие карты
  */
 
-(function () {
-  const popupShow = window.appChrome.popupShow;
-  const services = {
-    /**
+    /** Подстановка значений в URL
      * [z]   — зум карты
      * [lat] — широта
      * [lon] — долгота
@@ -15,6 +12,9 @@
      * [x]   — широта в проекции Меркатора
      * [y]   — долгота в проекции Меркатора
     */
+(function () {
+  const popupShow = window.appChrome.popupShow;
+  const services = {
     "nspd-gov": {
       "title": "Геоинформационный портал",
       "icon": '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 68 68"><path fill="url(#a)" d="M32 2h2l2.2.2a30.4 30.4 0 0 1 14.5 5.5c1.3 1 2.6 1.9 3.7 3H32l-3 .3c-1.6.2-3.1.8-4.6 1.5-1.9.9-3.8 1.8-5.4 3.2a29 29 0 0 0-4.1 4.4c-1 1.4-1.8 3-2.5 4.6-.6 1.5-1.3 3-1.4 4.6a30.1 30.1 0 0 0-.3 3.4V56H34c1.9-.1 3.8-.1 5.6-.8a33 33 0 0 0 4.9-2.3c.7-.4 1.4-1.1 2.3-1H58c-.3.7-.8 1.2-1.3 1.8A30.8 30.8 0 0 1 40 63.9c-1.9.5-3.8.7-5.8.8h-32V32.4a35.3 35.3 0 0 1 1.3-8A31.4 31.4 0 0 1 14.8 8.1a30.4 30.4 0 0 1 15.3-5.9l2-.2z"/><path fill="url(#b)" d="M29.8 15c.8-.4 1.8-.2 2.6-.3h33c.3 0 .6 0 .7.2.1.5-.3.8-.6 1l-8.3 8.6c-.8.7-1.3 1.7-2.4 2-.9.5-1.9.4-2.9.4H19.5c-.3 0-.9 0-1-.4 0-.3.2-.5.4-.6l9-9.2c.6-.6 1.1-1.4 2-1.7z"/><path fill="url(#c)" d="M60.7 26.6c.4-.4.8-1 1.3-1.3h3.2c.3 0 .7 0 1 .2 0 .4-.4.7-.6 1l-9.8 10.1a3.7 3.7 0 0 1-2.5 1H19.5c-.3 0-.6 0-.9-.2-.2-.4.1-.7.3-1l5.2-5.2c.2-.3.5-.3.8-.3h28c1.2 0 2.4-.3 3.6-.7 1.7-.7 2.9-2.3 4.2-3.6z"/><path fill="url(#d)" d="M62 35.8c.2-.2.6-.2.8-.2h2.7c.2 0 .5 0 .6.2.1.4-.3.7-.6 1L55.8 47a3.7 3.7 0 0 1-2.5 1H19.5c-.4 0-.9 0-1-.5 0-.2.3-.5.5-.7l4.7-4.9c.3-.3.6-.3 1-.3h27.7c1.4 0 3-.3 4.3-.8 1.6-.7 2.6-2.1 3.8-3.3l1.5-1.6z"/><defs><linearGradient id="a" x1="57.4" x2="3.3" y1="10.6" y2="65.8" gradientUnits="userSpaceOnUse"><stop stop-color="#4AFFD8"/><stop offset=".3" stop-color="#00CAFF"/><stop offset=".7" stop-color="#2D93FF"/><stop offset="1" stop-color="#007CFF"/></linearGradient><linearGradient id="b" x1="57.4" x2="3.3" y1="10.6" y2="65.8" gradientUnits="userSpaceOnUse"><stop stop-color="#4AFFD8"/><stop offset=".3" stop-color="#00CAFF"/><stop offset=".7" stop-color="#2D93FF"/><stop offset="1" stop-color="#007CFF"/></linearGradient><linearGradient id="c" x1="57.4" x2="3.3" y1="10.6" y2="65.8" gradientUnits="userSpaceOnUse"><stop stop-color="#4AFFD8"/><stop offset=".3" stop-color="#00CAFF"/><stop offset=".7" stop-color="#2D93FF"/><stop offset="1" stop-color="#007CFF"/></linearGradient><linearGradient id="d" x1="57.4" x2="3.3" y1="10.6" y2="65.8" gradientUnits="userSpaceOnUse"><stop stop-color="#4AFFD8"/><stop offset=".3" stop-color="#00CAFF"/><stop offset=".7" stop-color="#2D93FF"/><stop offset="1" stop-color="#007CFF"/></linearGradient></defs></svg>',
@@ -106,18 +106,17 @@
 
     // Добавление панели
     $("body").append('<div class="nk-portal nk-portal_open-service"><!----><div class="nk-popup nk-popup_direction_right-bottom nk-popup_visible nk-popup_theme_islands nk-popup_lontrict-height" style="left: 265px; bottom: 64px; z-index: 1001;"><div class="nk-size-observer"><div class="nk-popup__content"><div class="nk-size-observer"><div class="nk-scrollable nk-scrollable_with-thumb"><div class="nk-scrollable__container" style="max-height: 817px;"><div class="nk-scrollable__content"><div class="nk-size-observer nk-scrollable__content-size-observer"><!----><!----><div class="nk-menu nk-menu_theme_islands nk-menu_mode_check nk-menu_size_m" tabindex="0" style="overflow-y: visible;"></div><!----><!----><!----><!----><!----></div></div></div></div><!----><!----><!----></div><!----></div></div></div></div>');
-    const listBlock = $("body .nk-portal_open-service .nk-menu.nk-menu_theme_islands.nk-menu_mode_check.nk-menu_size_m");
-
+    const listBlock = $("body .nk-portal_open-service .nk-menu.nk-menu_theme_islands.nk-menu_mode_check.nk-menu_size_m")
+    
     let sourceUrl = window.location.href;
-    let lon = sourceUrl.match(/\d{1,3}\.\d*/g)[1];
-    let lat = sourceUrl.match(/\d{1,3}\.\d*/g)[0];
-    let x = lat * (Math.PI / 180) * 6378137;
-    let y = Math.log(Math.tan((Math.PI / 4) + (lon * Math.PI / 180) / 2)) * 6378137;
-    let h = Math.round(Math.cos(lat * Math.PI / 180) * 96777528.8 / (2 ** z));
-
-
     const url = new URL(sourceUrl.replace("#!", ""));
     let z = url.searchParams.get('z');
+    let lon = sourceUrl.match(/\d{1,3}\.\d*/g)[1];
+    let lat = sourceUrl.match(/\d{1,3}\.\d*/g)[0];
+    let h = Math.round(Math.cos(lat * Math.PI / 180) * 96777528.8 / (2 ** z))*100;
+    let x = lat * (Math.PI / 180) * 6378137;
+    let y = Math.log(Math.tan((Math.PI / 4) + (lon * Math.PI / 180) / 2)) * 6378137;
+
 
     for (const nameServices in settingOpenServices) {
       if (settingOpenServices[nameServices] && services[nameServices]) {
@@ -193,14 +192,13 @@
           if (!menu[0]) return;
 
           let sourceUrl = window.location.href;
-          let lon = sourceUrl.match(/-?\d{1,3}\.\d*/g)[1];
-          let lat = sourceUrl.match(/-?\d{1,3}\.\d*/g)[0];
-          let x = lat * (Math.PI / 180) * 6378137;
-          let y = Math.log(Math.tan((Math.PI / 4) + (lon * Math.PI / 180) / 2)) * 6378137;
-          let h = Math.round(Math.cos(lat * Math.PI / 180) * 96777528.8 / (2 ** z));
-
           const url = new URL(sourceUrl.replace("#!", ""));
           let z = url.searchParams.get('z');
+          let lon = sourceUrl.match(/\d{1,3}\.\d*/g)[1];
+          let lat = sourceUrl.match(/\d{1,3}\.\d*/g)[0];
+          let h = Math.round(Math.cos(lat * Math.PI / 180) * 96777528.8 / (2 ** z))*100;
+          let x = lat * (Math.PI / 180) * 6378137;
+          let y = Math.log(Math.tan((Math.PI / 4) + (lon * Math.PI / 180) / 2)) * 6378137;
 
           $("#nk-service-list").remove();
           menu.append('<div id="nk-service-list"><div style="border-top: 1px solid var(--section--border-color); width: calc(100% - 15px); margin: 5px 7.5px;"></div></div>');
