@@ -1,0 +1,530 @@
+{
+  "whatAreExtendedToolsNYAK": {
+    "message": "What are Extended Tools NYAK"
+  },
+  "extendedToolsNYAKDescription": {
+    "message": "This is an extension that adds new features to the People's Map. These features are mainly intended for experienced users."
+  },
+  "notOfficialYandexExtension": {
+    "message": "This is not an official Yandex extension"
+  },
+  "feedbackAndSupport": {
+    "message": "If you have a wish or question, you can ask the developer via Yandex.Messenger. If you know how to fix a bug yourself, please create an Issue in the extension repository or make a Pull request."
+  },
+  "modules": {
+    "message": "Modules"
+  },
+  "moduleSelectionDescription": {
+    "message": "You can choose which functions and modules you need, disabled modules will not be launched while working with the People's Map"
+  },
+  "addressValidation": {
+    "message": "Address Validation"
+  },
+  "addressValidationDescription": {
+    "message": "Adds the ability to check addresses added to Yandex.Maps"
+  },
+  "favoriteObjects": {
+    "message": "Favorite Objects"
+  },
+  "favoriteObjectsDescription": {
+    "message": "Includes a block in the left menu with favorite object categories that are available for quick creation"
+  },
+  "duplicateAddressSearch": {
+    "message": "Duplicate Address Search"
+  },
+  "duplicateAddressSearchDescription": {
+    "message": "Searches for duplicate addresses, if found, displays a warning in the address card"
+  },
+  "roadIntersectionConflictCheck": {
+    "message": "Road Intersection Conflict Check"
+  },
+  "roadIntersectionConflictCheckDescription": {
+    "message": "If only 2 roads converge at the intersection of road sections, then an attribute identity check will be performed"
+  },
+  "profileLinkFromYandexQ": {
+    "message": "Profile Link from Yandex.Q"
+  },
+  "profileLinkFromYandexQDescription": {
+    "message": "Adds the ability in Yandex.Q to go to the user's profile in the People's Map"
+  },
+  "satelliteImageColorCorrection": {
+    "message": "Satellite Image Color Correction"
+  },
+  "satelliteImageColorCorrectionDescription": {
+    "message": "Adds the ability to adjust the underlay for various parameters"
+  },
+  "streamAddressCreation": {
+    "message": "Stream Address Creation"
+  },
+  "streamAddressCreationDescription": {
+    "message": "Adds the ability to auto-fill the address card using the buttons (-2/-1/+1/+2)"
+  },
+  "navigateToOtherMapServices": {
+    "message": "Navigate to Other Map Services"
+  },
+  "navigateToOtherMapServicesDescription": {
+    "message": "Adds the ability to navigate to another map service"
+  },
+  "loadAdditionalInformation": {
+    "message": "Load Additional Information"
+  },
+  "loadAdditionalInformationDescription": {
+    "message": "You can choose what information to display"
+  },
+  "users": {
+    "message": "Users"
+  },
+  "loadUserSpecialRights": {
+    "message": "Loads information about the user's special rights"
+  },
+  "renovationFundData": {
+    "message": "Data from the Renovation Fund"
+  },
+  "renovationFundDataDescription": {
+    "message": "This setting is set in the subsection \"Renovation Fund — mos.ru\" in the left menu"
+  },
+  "settingsSaved": {
+    "message": "Settings saved"
+  },
+  "extensionVersion": {
+    "message": "Extension version"
+  },
+  "mozillaFirefox": {
+    "message": "Mozilla Firefox"
+  },
+  "opera": {
+    "message": "Opera"
+  },
+  "internetExplorer": {
+    "message": "Internet Explorer"
+  },
+  "microsoftEdge": {
+    "message": "Microsoft Edge"
+  },
+  "yandexBrowser": {
+    "message": "Yandex Browser"
+  },
+  "googleChrome": {
+    "message": "Google Chrome"
+  },
+  "safari": {
+    "message": "Safari"
+  },
+  "notDetermined": {
+    "message": "Not determined"
+  },
+  "browser": {
+    "message": "Browser"
+  },
+  "operatingSystem": {
+    "message": "Operating system"
+  },
+  "windows": {
+    "message": "Windows"
+  },
+  "macOS": {
+    "message": "Mac OS"
+  },
+  "linux": {
+    "message": "Linux"
+  },
+  "cookieSupport": {
+    "message": "Cookie support"
+  },
+  "yes": {
+    "message": "Yes"
+  },
+  "no": {
+    "message": "No"
+  },
+  "connectedModules": {
+    "message": "Connected modules"
+  },
+  "narodnayaKarta": {
+    "message": "People's Map"
+  },
+  "downloadSpeed": {
+    "message": "Download speed"
+  },
+  "version": {
+    "message": "Version"
+  },
+  "user": {
+    "message": "User"
+  },
+  "moderator": {
+    "message": "Moderator"
+  },
+  "outsourcer": {
+    "message": "Outsourcer"
+  },
+  "yandexEmployee": {
+    "message": "Yandex employee"
+  },
+  "noConnectedModules": {
+    "message": "No connected modules"
+  },
+  "role": {
+    "message": "Role"
+  },
+  "settingsReset": {
+    "message": "Settings reset"
+  },
+  "addFavoriteObject": {
+    "message": "Add object to favorites"
+  },
+  "removeFavoriteObject": {
+    "message": "Remove object from favorites"
+  },
+  "notInRenovationProgram": {
+    "message": "Not in renovation program"
+  },
+  "houseNotInRenovationProgram": {
+    "message": "This house is not in the renovation program."
+  },
+  "housesFromStreetInProgram": {
+    "message": "Houses from this street in the program"
+  },
+  "housesPlural1": {
+    "message": "houses"
+  },
+  "housesPlural2": {
+    "message": "houses"
+  },
+  "moreHouses": {
+    "message": "$1 more $2"
+  },
+  "failedToGetRenovationInfo": {
+    "message": "Failed to get information from the Renovation Fund"
+  },
+  "somethingWentWrong": {
+    "message": "Sorry, something went wrong"
+  },
+  "searchUsers": {
+    "message": "Search users"
+  },
+  "startTypingLoginToSearch": {
+    "message": "Start typing login to search"
+  },
+  "nothingFoundForQuery": {
+    "message": "Nothing found for your query"
+  },
+  "deleted": {
+    "message": "deleted"
+  },
+  "specialRights": {
+    "message": "Special rights"
+  },
+  "registrationDate": {
+    "message": "Registration date"
+  },
+  "ratingPosition": {
+    "message": "Rating position"
+  },
+  "editCount": {
+    "message": "Edit count"
+  },
+  "inaccuraciesResolved": {
+    "message": "Inaccuracies resolved"
+  },
+  "banDuration": {
+    "message": "Ban duration"
+  },
+  "banReason": {
+    "message": "Ban reason"
+  },
+  "userHasNoEdits": {
+    "message": "User has no edits"
+  },
+  "checkAddresses": {
+    "message": "Check addresses"
+  },
+  "road": {
+    "message": "Road"
+  },
+  "addressList": {
+    "message": "Address list"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "check": {
+    "message": "Check"
+  },
+  "checkingInProgress": {
+    "message": "Checking in progress"
+  },
+  "unaddedAddresses": {
+    "message": "Unadded addresses"
+  },
+  "addressesNotInList": {
+    "message": "Addresses not in list"
+  },
+  "addressesWithError": {
+    "message": "Addresses with error"
+  },
+  "allAddressesAdded": {
+    "message": "All addresses added"
+  },
+  "allAddressesExist": {
+    "message": "All addresses exist"
+  },
+  "noErrorsInAddresses": {
+    "message": "No errors in addresses"
+  },
+  "noAddressErrorsFound": {
+    "message": "No address errors found"
+  },
+  "houseNumbersCommaSeparated": {
+    "message": "House numbers must be comma-separated"
+  },
+  "houseNumbersNoRoadName": {
+    "message": "House numbers in the list should not contain the road name"
+  },
+  "roads": {
+    "message": "Roads"
+  },
+  "roadInfrastructure": {
+    "message": "Road infrastructure"
+  },
+  "trafficConditions": {
+    "message": "Traffic conditions"
+  },
+  "parking": {
+    "message": "Parking"
+  },
+  "territories": {
+    "message": "Territories"
+  },
+  "buildings": {
+    "message": "Buildings"
+  },
+  "floorPlans": {
+    "message": "Floor plans"
+  },
+  "places": {
+    "message": "Places"
+  },
+  "buildingEntrances": {
+    "message": "Building entrances"
+  },
+  "addresses": {
+    "message": "Addresses"
+  },
+  "fences": {
+    "message": "Fences"
+  },
+  "administrativeDivisions": {
+    "message": "Administrative divisions"
+  },
+  "vegetation": {
+    "message": "Vegetation"
+  },
+  "relief": {
+    "message": "Relief"
+  },
+  "hydrography": {
+    "message": "Hydrography"
+  },
+  "groupEdits": {
+    "message": "Group edits"
+  },
+  "transport": {
+    "message": "Transport"
+  },
+  "highSpeedTransport": {
+    "message": "High-speed transport"
+  },
+  "airTransport": {
+    "message": "Air transport"
+  },
+  "railways": {
+    "message": "Railways"
+  },
+  "waterTransport": {
+    "message": "Water transport"
+  },
+  "selectTemplate": {
+    "message": "Select template"
+  },
+  "selectBanTemplate": {
+    "message": "Select ban template"
+  },
+  "ignoringComments": {
+    "message": "Ignoring comments"
+  },
+  "unableToContactUser": {
+    "message": "Unable to contact user"
+  },
+  "systematicRuleViolations": {
+    "message": "Systematic rule violations"
+  },
+  "profanity": {
+    "message": "Profanity"
+  },
+  "hateSpeech": {
+    "message": "Hate speech"
+  },
+  "vandalism": {
+    "message": "Vandalism"
+  },
+  "duplicateBlockedProfile": {
+    "message": "Duplicate blocked profile"
+  },
+  "banMessageIgnoringComments": {
+    "message": "Good day, $1!\n\nUnfortunately, you are ignoring the moderator's comments and continue to make mistakes when drawing the map. Please reply to me in [Yandex.Messenger](https://yandex.ru/chat#/) and I will remove the block ahead of schedule."
+  },
+  "banDurationUpTo3Days": {
+    "message": "Choose any blocking period, but not more than 3 days"
+  },
+  "banMessageUnableToContact": {
+    "message": "Good day, $1!\n\nUnfortunately, I could not contact you via [Yandex.Messenger](https://yandex.ru/chat#/). Please remove the restriction and write to me, after which I will remove the block ahead of schedule."
+  },
+  "recommendedBanDuration1Day": {
+    "message": "Recommended ban duration for this reason is one day"
+  },
+  "banMessageSystematicViolations": {
+    "message": "Good day, $1!\n\nUnfortunately, you make many mistakes when drawing objects, despite their explanation to you.\n\nPlease study the [rules](https://yandex.ru/support/nmaps/) during the blocking period to avoid mistakes in the future."
+  },
+  "provideLinksToEditsWithErrors": {
+    "message": "It is advisable to provide links to several edits with errors"
+  },
+  "reasonForProvidingLinks": {
+    "message": "This is necessary so that the user better understands what mistakes he made repeatedly.\n\nLinks can be indicated after the phrase \"... despite their explanation to you.\" On the next line, you can write \"Here are a few examples of them:\" and on a new line indicate links to edits with a description of the error.\n\nTo ensure that the reason for blocking has a single writing style, it is recommended to use a construction of the form:\n— [Brief description of the error](link to the edit)"
+  },
+  "banMessageProfanity": {
+    "message": "Good day, $1!\n\nIn the People's Map, the use of profanity in comments or profiles is prohibited. Please reconsider your attitude to cartography and study the [rules](https://yandex.ru/support/nmaps/) during the blocking period."
+  },
+  "banMessageHateSpeech": {
+    "message": "Good day, $1!\n\nIn the People's Map, the use of statements aimed at inciting hatred or enmity or humiliating the dignity of a person or group of persons is prohibited.\n\nPlease reconsider your attitude to cartography and study the [rules](https://yandex.ru/support/nmaps/) during the blocking period."
+  },
+  "banMessageVandalism": {
+    "message": "Good day, $1!\n\nUnfortunately, your edits have been recognized as vandalism, so your profile has been blocked forever."
+  },
+  "recommendedBanDurationPermanent": {
+    "message": "Recommended ban duration for this reason is permanent"
+  },
+  "banMessageDuplicateProfile": {
+    "message": "Good day, $1!\n\nUnfortunately, your profile has been recognized as a duplicate of another, blocked profile."
+  },
+  "provideLinkToOtherProfile": {
+    "message": "It is advisable to provide a link to another profile of this user"
+  },
+  "reasonForProvidingProfileLink": {
+    "message": "This is necessary so that in the event of a dispute, it is easier to find a duplicate profile.\n\nThe link can be indicated instead of the inscription \"blocked profile\".\n\nTo ensure that the reason for blocking has a single writing style, it is recommended to use a construction of the form: [blocked profile](link to profile)"
+  },
+  "appealBanMessage": {
+    "message": "\n\nYou can always appeal the blocking through [support service](https://yandex.ru/support/nmaps/troubleshooting/fb_nmaps.html)"
+  },
+  "satelliteTileColorCorrection": {
+    "message": "Satellite tile color correction"
+  },
+  "applyToScheme": {
+    "message": "Apply to scheme"
+  },
+  "brightness": {
+    "message": "Brightness"
+  },
+  "contrast": {
+    "message": "Contrast"
+  },
+  "blackAndWhiteBalance": {
+    "message": "Black and white balance"
+  },
+  "opacity": {
+    "message": "Opacity"
+  },
+  "saturation": {
+    "message": "Saturation"
+  },
+  "colorShift": {
+    "message": "Color shift"
+  },
+  "colorInversion": {
+    "message": "Color inversion"
+  },
+  "all": {
+    "message": "All"
+  },
+  "active": {
+    "message": "Active"
+  },
+  "blocked": {
+    "message": "Blocked"
+  },
+  "deletedUsers": {
+    "message": "Deleted"
+  },
+  "criticalErrorOccurred": {
+    "message": "A critical error occurred in the extension"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "failedToConnectRenovationFund": {
+    "message": "Failed to connect to the Renovation Fund data server"
+  },
+  "extensionUpdateAvailable": {
+    "message": "Extension update available"
+  },
+  "goToGithubForUpdate": {
+    "message": "Do you want to go to GitHub to download the new version?"
+  },
+  "currentVersion": {
+    "message": "Current version"
+  },
+  "availableVersion": {
+    "message": "Available version"
+  },
+  "whatsNew": {
+    "message": "What's new"
+  },
+  "noUpdateInformation": {
+    "message": "No update information"
+  },
+  "remindLater": {
+    "message": "Remind later"
+  },
+  "goToGithub": {
+    "message": "Go to GitHub"
+  },
+  "newHouse": {
+    "message": "New house"
+  },
+  "underConstruction": {
+    "message": "Under construction"
+  },
+  "commissioned": {
+    "message": "Commissioned"
+  },
+  "startingPlatform": {
+    "message": "Starting platform"
+  },
+  "quarterDevelopmentObjects": {
+    "message": "Quarter development objects"
+  },
+  "houseInRenovationProgram": {
+    "message": "House included in the Renovation Program"
+  },
+  "resettlementInProgress": {
+    "message": "Resettlement in progress"
+  },
+  "resettlementCompleted": {
+    "message": "Resettlement of the house is completed"
+  },
+  "resettlementCompletedHouseDemolished": {
+    "message": "Resettlement of the house is completed.\n House demolished"
+  },
+  "resettlementNotStarted": {
+    "message": "Resettlement has not yet begun"
+  },
+  "resettlementAtInfoCenter": {
+    "message": "Resettlement of the house is carried out at the Information Center at: "
+  },
+  "infoCenterClosedContactPrefecture": {
+    "message": "The information center for the resettlement of the house is closed. On the issue of completion of resettlement, you can contact the prefecture of the administrative district."
+  },
+  "resettlementNotStartedInfoCenterAddressLater": {
+    "message": "Resettlement of the house has not yet begun. The address of the Information Center will be published on the day the resettlement starts."
+  }
+}

@@ -1,0 +1,530 @@
+{
+  "whatAreExtendedToolsNYAK": {
+    "message": "Что такое Дополнительные инструменты НЯК"
+  },
+  "extendedToolsNYAKDescription": {
+    "message": "Это расширение, которое добавляет новые возможности в Народную карту. Эти возможности в основном предназначены для опытных пользователей."
+  },
+  "notOfficialYandexExtension": {
+    "message": "Это не официальное расширение Яндекса"
+  },
+  "feedbackAndSupport": {
+    "message": "Если у Вас есть пожелание или вопрос, то его можно задать разработчику через Яндекс.Мессенджер. Если Вы сами знаете, как исправить ошибку — пожалуйста, создайте Issue в репозитории расширения или сделайте Pull request."
+  },
+  "modules": {
+    "message": "Модули"
+  },
+  "moduleSelectionDescription": {
+    "message": "Вы можете выбрать, какие функции и модули Вам нужны, отключённые модули не будут запускаться во время работы с Народной картой"
+  },
+  "addressValidation": {
+    "message": "Проверка адресов"
+  },
+  "addressValidationDescription": {
+    "message": "Добавляет возможность проверить адреса, добавленные в Яндекс.Карты"
+  },
+  "favoriteObjects": {
+    "message": "Любимые объекты"
+  },
+  "favoriteObjectsDescription": {
+    "message": "Включает в левом меню блок с любимыми категорями объектов, которые доступны для быстрого создания"
+  },
+  "duplicateAddressSearch": {
+    "message": "Поиск дубликатов адресов"
+  },
+  "duplicateAddressSearchDescription": {
+    "message": "Ищет дубликаты адресов, в случае их обнаружения выводит в карточку адреса предупреждение"
+  },
+  "roadIntersectionConflictCheck": {
+    "message": "Проверка пересечений дорог на конфликты"
+  },
+  "roadIntersectionConflictCheckDescription": {
+    "message": "Если в пересечении участков дорог сходится только 2 дороги, то будет выполнена проверка на идентичность атрибутов"
+  },
+  "profileLinkFromYandexQ": {
+    "message": "Переход в профиль из Яндекс.Кью"
+  },
+  "profileLinkFromYandexQDescription": {
+    "message": "Добавляет возможность в Яндекс.Кью перейти в профиль пользователя в Народной карте"
+  },
+  "satelliteImageColorCorrection": {
+    "message": "Цветовая коррекция спутниковых снимков"
+  },
+  "satelliteImageColorCorrectionDescription": {
+    "message": "Добавляет возможность настраивать подложку под различные параметры"
+  },
+  "streamAddressCreation": {
+    "message": "Потоковое создание адресов"
+  },
+  "streamAddressCreationDescription": {
+    "message": "Добавляет возможность автозаполнения карточки адреса при помощи кнопок (-2/-1/+1/+2)"
+  },
+  "navigateToOtherMapServices": {
+    "message": "Переход на другие картографические сервисы"
+  },
+  "navigateToOtherMapServicesDescription": {
+    "message": "Добавляет возможность перехода на другой картографический сервис"
+  },
+  "loadAdditionalInformation": {
+    "message": "Подгрузка дополнительной информации"
+  },
+  "loadAdditionalInformationDescription": {
+    "message": "Вы можете выбрать, какую информацию необходимо отображать"
+  },
+  "users": {
+    "message": "Пользователи"
+  },
+  "loadUserSpecialRights": {
+    "message": "Загружает информацию о специальных правах пользователя"
+  },
+  "renovationFundData": {
+    "message": "Данные из Фонда реновации"
+  },
+  "renovationFundDataDescription": {
+    "message": "Эта настройка задается в подразделе «Фонд реновации — mos.ru» в левом меню"
+  },
+  "settingsSaved": {
+    "message": "Настройки сохранены"
+  },
+  "extensionVersion": {
+    "message": "Версия расширения"
+  },
+  "mozillaFirefox": {
+    "message": "Mozilla Firefox"
+  },
+  "opera": {
+    "message": "Opera"
+  },
+  "internetExplorer": {
+    "message": "Internet Explorer"
+  },
+  "microsoftEdge": {
+    "message": "Microsoft Edge"
+  },
+  "yandexBrowser": {
+    "message": "Яндекс Браузер"
+  },
+  "googleChrome": {
+    "message": "Google Chrome"
+  },
+  "safari": {
+    "message": "Safari"
+  },
+  "notDetermined": {
+    "message": "Не определен"
+  },
+  "browser": {
+    "message": "Браузер"
+  },
+  "operatingSystem": {
+    "message": "Операционная система"
+  },
+  "windows": {
+    "message": "Windows"
+  },
+  "macOS": {
+    "message": "Mac OS"
+  },
+  "linux": {
+    "message": "Linux"
+  },
+  "cookieSupport": {
+    "message": "Поддержка cookie"
+  },
+  "yes": {
+    "message": "Да"
+  },
+  "no": {
+    "message": "Нет"
+  },
+  "connectedModules": {
+    "message": "Подключенные модули"
+  },
+  "narodnayaKarta": {
+    "message": "Народная карта"
+  },
+  "downloadSpeed": {
+    "message": "Скорость загрузки"
+  },
+  "version": {
+    "message": "Версия"
+  },
+  "user": {
+    "message": "Пользователь"
+  },
+  "moderator": {
+    "message": "Модератор"
+  },
+  "outsourcer": {
+    "message": "Аутсорсер"
+  },
+  "yandexEmployee": {
+    "message": "Сотрудник Яндекса"
+  },
+  "noConnectedModules": {
+    "message": "Нет подключенных модулей"
+  },
+  "role": {
+    "message": "Роль"
+  },
+  "settingsReset": {
+    "message": "Настройки сброшены"
+  },
+  "addFavoriteObject": {
+    "message": "Добавить объект в любимые"
+  },
+  "removeFavoriteObject": {
+    "message": "Удалить объект из любимых"
+  },
+  "notInRenovationProgram": {
+    "message": "Не участвует в программе реновации"
+  },
+  "houseNotInRenovationProgram": {
+    "message": "Этот дом не участвует в программе реновации."
+  },
+  "housesFromStreetInProgram": {
+    "message": "Дома с этой улицы, участвующие в программе"
+  },
+  "housesPlural1": {
+    "message": "домов"
+  },
+  "housesPlural2": {
+    "message": "дома"
+  },
+  "moreHouses": {
+    "message": "Ещё $1 $2"
+  },
+  "failedToGetRenovationInfo": {
+    "message": "Не удалось получить информацию от Фонда реновации"
+  },
+  "somethingWentWrong": {
+    "message": "Извините, что-то пошло не так"
+  },
+  "searchUsers": {
+    "message": "Поиск пользователей"
+  },
+  "startTypingLoginToSearch": {
+    "message": "Для поиска начните вводить логин"
+  },
+  "nothingFoundForQuery": {
+    "message": "По запросу ничего не найдено"
+  },
+  "deleted": {
+    "message": "удалён"
+  },
+  "specialRights": {
+    "message": "Специальные права"
+  },
+  "registrationDate": {
+    "message": "Дата регистрации"
+  },
+  "ratingPosition": {
+    "message": "Место в рейтинге"
+  },
+  "editCount": {
+    "message": "Число правок"
+  },
+  "inaccuraciesResolved": {
+    "message": "Разобрано неточностей"
+  },
+  "banDuration": {
+    "message": "Срок блокировки"
+  },
+  "banReason": {
+    "message": "Причина блокировки"
+  },
+  "userHasNoEdits": {
+    "message": "У пользователя нет правок"
+  },
+  "checkAddresses": {
+    "message": "Проверить адреса"
+  },
+  "road": {
+    "message": "Дорога"
+  },
+  "addressList": {
+    "message": "Список адресов"
+  },
+  "cancel": {
+    "message": "Отмена"
+  },
+  "check": {
+    "message": "Проверить"
+  },
+  "checkingInProgress": {
+    "message": "Идёт проверка"
+  },
+  "unaddedAddresses": {
+    "message": "Недобавленные адреса"
+  },
+  "addressesNotInList": {
+    "message": "Адресов нет в списке"
+  },
+  "addressesWithError": {
+    "message": "Адреса с ошибкой"
+  },
+  "allAddressesAdded": {
+    "message": "Все адреса добавлены"
+  },
+  "allAddressesExist": {
+    "message": "Все адреса существуют"
+  },
+  "noErrorsInAddresses": {
+    "message": "Ошибок в адресах нет"
+  },
+  "noAddressErrorsFound": {
+    "message": "Ошибки в адресах не найдены"
+  },
+  "houseNumbersCommaSeparated": {
+    "message": "Номера домов должны быть разделены запятыми"
+  },
+  "houseNumbersNoRoadName": {
+    "message": "Номера домов в списке не должны содержать название дороги"
+  },
+  "roads": {
+    "message": "Дороги"
+  },
+  "roadInfrastructure": {
+    "message": "Дорожная инфраструктура"
+  },
+  "trafficConditions": {
+    "message": "Условия движения"
+  },
+  "parking": {
+    "message": "Парковки"
+  },
+  "territories": {
+    "message": "Территории"
+  },
+  "buildings": {
+    "message": "Здания"
+  },
+  "floorPlans": {
+    "message": "Схемы помещений"
+  },
+  "places": {
+    "message": "Места"
+  },
+  "buildingEntrances": {
+    "message": "Входы в здание"
+  },
+  "addresses": {
+    "message": "Адреса"
+  },
+  "fences": {
+    "message": "Заборы"
+  },
+  "administrativeDivisions": {
+    "message": "Административное деление"
+  },
+  "vegetation": {
+    "message": "Растительность"
+  },
+  "relief": {
+    "message": "Рельеф"
+  },
+  "hydrography": {
+    "message": "Гидрография"
+  },
+  "groupEdits": {
+    "message": "Групповые правки"
+  },
+  "transport": {
+    "message": "Транспорт"
+  },
+  "highSpeedTransport": {
+    "message": "Скоростной транспорт"
+  },
+  "airTransport": {
+    "message": "Воздушный транспорт"
+  },
+  "railways": {
+    "message": "Железные дороги"
+  },
+  "waterTransport": {
+    "message": "Водный транспорт"
+  },
+  "selectTemplate": {
+    "message": "Выбрать шаблон"
+  },
+  "selectBanTemplate": {
+    "message": "Выберите шаблон блокировки"
+  },
+  "ignoringComments": {
+    "message": "Игнорирование замечаний"
+  },
+  "unableToContactUser": {
+    "message": "Невозможно связаться с пользователем"
+  },
+  "systematicRuleViolations": {
+    "message": "Систематические нарушения правил"
+  },
+  "profanity": {
+    "message": "Ненормативная лексика"
+  },
+  "hateSpeech": {
+    "message": "Высказывания, разжигающие вражду"
+  },
+  "vandalism": {
+    "message": "Вандализм"
+  },
+  "duplicateBlockedProfile": {
+    "message": "Дубликат заблокированного профиля"
+  },
+  "banMessageIgnoringComments": {
+    "message": "Добрый день, $1!\n\nК сожалению, Вы игнорируете замечания модератора и продолжаете допускать ошибки при рисовании карты. Пожалуйста, ответьте мне в [Яндекс.Мессенджере](https://yandex.ru/chat#/) и я сниму блокировку досрочно."
+  },
+  "banDurationUpTo3Days": {
+    "message": "Выберите любой срок блокировки, но не более 3 дней"
+  },
+  "banMessageUnableToContact": {
+    "message": "Добрый день, $1!\n\nК сожалению, я не смог связаться с Вами через [Яндекс.Мессенджер](https://yandex.ru/chat#/). Пожалуйста, снимите ограничение и напишите мне, после чего я сниму блокировку досрочно."
+  },
+  "recommendedBanDuration1Day": {
+    "message": "Рекомендуемый срок блокировки для этой причины — день"
+  },
+  "banMessageSystematicViolations": {
+    "message": "Добрый день, $1!\n\nК сожалению, Вы допускаете множество ошибок при рисовании объектов, несмотря на их разъяснение Вам.\n\nПожалуйста, изучите [правила](https://yandex.ru/support/nmaps/) за время блокировки, чтобы в будущем не допускать ошибок."
+  },
+  "provideLinksToEditsWithErrors": {
+    "message": "Желательно указать ссылки на несколько правок с ошибками"
+  },
+  "reasonForProvidingLinks": {
+    "message": "Это нужно, чтобы пользователь лучше понимал, какие ошибки он допускал повторно.\n\nСсылки можно указать после фразы «... несмотря на их разъяснение Вам». На следующей строке можно написать «Вот несколько примеров из них:» и с новой строки указать ссылки на правки с описанием ошибки.\n\nЧтобы причина блокировки имела единый стиль написания, рекомендуется использовать конструкцию вида:\n— [Краткое описание ошибки](ссылка на правку)"
+  },
+  "banMessageProfanity": {
+    "message": "Добрый день, $1!\n\nВ Народной карте запрещено использование ненормативной лексики в комментариях или профиле. Пожалуйста, пересмотрите своё отношение к картографии и за время блокировки изучите [правила](https://yandex.ru/support/nmaps/)"
+  },
+  "banMessageHateSpeech": {
+    "message": "Добрый день, $1!\n\nВ Народной карте запрещено использование высказываний, направленных на возбуждение ненависти либо вражды или на унижение достоинства человека либо группы лиц.\n\nПожалуйста, пересмотрите своё отношение к картографии и за время блокировки изучите [правила](https://yandex.ru/support/nmaps/)"
+  },
+  "banMessageVandalism": {
+    "message": "Добрый день, $1!\n\nК сожалению, Ваши правки признаны вандальными, поэтому Ваш профиль заблокирован навсегда."
+  },
+  "recommendedBanDurationPermanent": {
+    "message": "Рекомендуемый срок блокировки для этой причины — бессрочно"
+  },
+  "banMessageDuplicateProfile": {
+    "message": "Добрый день, $1!\n\nК сожалению, Ваш профиль признан дубликатом другого, заблокированного профиля."
+  },
+  "provideLinkToOtherProfile": {
+    "message": "Желательно указать ссылку на другой профиль этого пользователя"
+  },
+  "reasonForProvidingProfileLink": {
+    "message": "Это нужно, чтобы при возникновении спорной ситуации было легче найти дубликат профиля.\n\nСсылку можно указать вместо надписи «заблокированного профиля».\n\nЧтобы причина блокировки имела единый стиль написания, рекомендуется использовать конструкцию вида: [заблокированного профиля](ссылка на профиль)"
+  },
+  "appealBanMessage": {
+    "message": "\n\nВы всегда можете обжаловать блокировку через [службу поддержки](https://yandex.ru/support/nmaps/troubleshooting/fb_nmaps.html)"
+  },
+  "satelliteTileColorCorrection": {
+    "message": "Цветовая коррекция спутниковых тайлов"
+  },
+  "applyToScheme": {
+    "message": "Применить к схеме"
+  },
+  "brightness": {
+    "message": "Яркость"
+  },
+  "contrast": {
+    "message": "Контраст"
+  },
+  "blackAndWhiteBalance": {
+    "message": "Баланс чёрного и белого"
+  },
+  "opacity": {
+    "message": "Непрозрачность"
+  },
+  "saturation": {
+    "message": "Насыщенность"
+  },
+  "colorShift": {
+    "message": "Сдвиг цветов"
+  },
+  "colorInversion": {
+    "message": "Инверсия цветов"
+  },
+  "all": {
+    "message": "Все"
+  },
+  "active": {
+    "message": "Активные"
+  },
+  "blocked": {
+    "message": "Заблокированные"
+  },
+  "deletedUsers": {
+    "message": "Удалённые"
+  },
+  "criticalErrorOccurred": {
+    "message": "В работе расширения произошла критическая ошибка"
+  },
+  "settings": {
+    "message": "Настройки"
+  },
+  "failedToConnectRenovationFund": {
+    "message": "Не удалось подключиться к серверу данных от Фонда реновации"
+  },
+  "extensionUpdateAvailable": {
+    "message": "Доступно обновление расширения"
+  },
+  "goToGithubForUpdate": {
+    "message": "Хотите перейти на GitHub, чтобы скачать новую версию?"
+  },
+  "currentVersion": {
+    "message": "Текущая версия"
+  },
+  "availableVersion": {
+    "message": "Доступная версия"
+  },
+  "whatsNew": {
+    "message": "Что нового"
+  },
+  "noUpdateInformation": {
+    "message": "Информации об обновлении нет"
+  },
+  "remindLater": {
+    "message": "Напомнить позже"
+  },
+  "goToGithub": {
+    "message": "Перейти на GitHub"
+  },
+  "newHouse": {
+    "message": "Новый дом"
+  },
+  "underConstruction": {
+    "message": "Строится"
+  },
+  "commissioned": {
+    "message": "Введён в эксплуатацию"
+  },
+  "startingPlatform": {
+    "message": "Стартовая площадка"
+  },
+  "quarterDevelopmentObjects": {
+    "message": "Объекты квартальной застройки"
+  },
+  "houseInRenovationProgram": {
+    "message": "Дом, включённый в Программу реновации"
+  },
+  "resettlementInProgress": {
+    "message": "Идёт переселение"
+  },
+  "resettlementCompleted": {
+    "message": "Переселение дома завершено"
+  },
+  "resettlementCompletedHouseDemolished": {
+    "message": "Переселение дома завершено.\n Дом снесён"
+  },
+  "resettlementNotStarted": {
+    "message": "Переселение ещё не началось"
+  },
+  "resettlementAtInfoCenter": {
+    "message": "Переселение дома производится в Информационном центре по адресу: "
+  },
+  "infoCenterClosedContactPrefecture": {
+    "message": "Информационный центр по переселению дома закрыт. По вопросу завершения переселения Вы можете обратиться в префектуру административного округа."
+  },
+  "resettlementNotStartedInfoCenterAddressLater": {
+    "message": "Переселение дома ещё не началось. Адрес Информационного центра будет опубликован в день старта переселения."
+  }
+}
