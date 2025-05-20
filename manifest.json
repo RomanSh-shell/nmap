@@ -63,6 +63,9 @@
     }
   },
   "background": {
-    "service_worker": "resources/system.js"
+    "scripts": [
+      "resources/browser-polyfill.js",
+      "resources/system.js"
+    ]
   }
 }
