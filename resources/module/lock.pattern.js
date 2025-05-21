@@ -120,7 +120,7 @@
       }
 
       const buttonLockText = buttonLock.text();
-      if (buttonLockText !== "Заблокировать") {
+      if (buttonLockText !== chrome.i18n.getMessage("lockPatternBlockButtonState")) {
         $(".nk-portal-lock-pattern").remove();
         lastUser = null;
 

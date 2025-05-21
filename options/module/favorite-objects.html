@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru"> <!-- Will be changed to 'en' by i18n script or should be dynamic -->
   <head>
     <meta charset="utf8">
     <link href="/options/style.css" rel="stylesheet"/>
     <script src="/jquery-3.3.1.min.js"></script>
+    <script src="/resources/js/i18n.js"></script> <!-- Added i18n script -->
   </head>
   <body>
-    <h1 data-info="Настройки модуля">Любимые объекты</h1>
+    <h1 data-info="Настройки модуля" data-i18n="favObjHeading"></h1>
 
-    <p class="p" style="margin-top: -4px; margin-bottom: 15px;">Вы можете выбрать, какие категории объектов будут отображаться в списке любимых, советуем не выбирать слишком много, если у вас небольшая высота экрана.</p>
+    <p class="p" style="margin-top: -4px; margin-bottom: 15px;" data-i18n="favObjIntro"></p>
 
     <div class="item-checkbox p" style="margin-bottom: 15px;">
       <span class="checkbox checkbox_theme_normal checkbox_size_m checkbox_view_classic checkbox_lines_multi i-bem checkbox_js_inited">
@@ -17,7 +18,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-favorite-object_rd" for="favorite-object_rd">
-          <div class="safe-content"><img src="/resources/objects/rd.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/>Дороги</div>
+          <div class="safe-content"><img src="/resources/objects/rd.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/><span data-i18n="favObjLabelRoads"></span></div>
         </label>
       </span>
     </div>
@@ -29,7 +30,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-favorite-object_bld" for="favorite-object_bld">
-          <div class="safe-content"><img src="/resources/objects/bld.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/>Здания</div>
+          <div class="safe-content"><img src="/resources/objects/bld.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/><span data-i18n="favObjLabelBuildings"></span></div>
         </label>
       </span>
     </div>
@@ -41,7 +42,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-favorite-object_addr" for="favorite-object_addr">
-          <div class="safe-content"><img src="/resources/objects/addr.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/>Адреса</div>
+          <div class="safe-content"><img src="/resources/objects/addr.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/><span data-i18n="favObjLabelAddressPoints"></span></div>
         </label>
       </span>
     </div>
@@ -53,7 +54,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-favorite-object_poi" for="favorite-object_poi">
-          <div class="safe-content"><img src="/resources/objects/poi.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/>Места</div>
+          <div class="safe-content"><img src="/resources/objects/poi.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/><span data-i18n="favObjLabelPOIs"></span></div>
         </label>
       </span>
     </div>
@@ -65,7 +66,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-favorite-object_transport" for="favorite-object_transport">
-          <div class="safe-content"><img src="/resources/objects/transport.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/>Транспорт</div>
+          <div class="safe-content"><img src="/resources/objects/transport.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/><span data-i18n="favObjLabelTransportType"></span></div>
         </label>
       </span>
     </div>
@@ -77,7 +78,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-favorite-object_vegetation" for="favorite-object_vegetation">
-          <div class="safe-content"><img src="/resources/objects/vegetation.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/>Растительность</div>
+          <div class="safe-content"><img src="/resources/objects/vegetation.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/><span data-i18n="favObjLabelVegetation"></span></div>
         </label>
       </span>
     </div>
@@ -89,7 +90,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-favorite-object_relief" for="favorite-object_relief">
-          <div class="safe-content"><img src="/resources/objects/relief.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/>Рельеф</div>
+          <div class="safe-content"><img src="/resources/objects/relief.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/><span data-i18n="favObjLabelTerrain"></span></div>
         </label>
       </span>
     </div>
@@ -101,7 +102,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-favorite-object_hydro" for="favorite-object_hydro">
-          <div class="safe-content"><img src="/resources/objects/hydro.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/>Гидрография</div>
+          <div class="safe-content"><img src="/resources/objects/hydro.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/><span data-i18n="favObjLabelHydrography"></span></div>
         </label>
       </span>
     </div>
@@ -113,7 +114,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-favorite-object_urban" for="favorite-object_urban">
-          <div class="safe-content"><img src="/resources/objects/urban.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/>Территории</div>
+          <div class="safe-content"><img src="/resources/objects/urban.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/><span data-i18n="favObjLabelTerritory"></span></div>
         </label>
       </span>
     </div>
@@ -125,7 +126,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-favorite-object_ad" for="favorite-object_ad">
-          <div class="safe-content"><img src="/resources/objects/ad.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/>Административное деление</div>
+          <div class="safe-content"><img src="/resources/objects/ad.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/><span data-i18n="favObjLabelAdminDivision"></span></div>
         </label>
       </span>
     </div>
@@ -137,7 +138,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-favorite-object_roadnet" for="favorite-object_roadnet">
-          <div class="safe-content"><img src="/resources/objects/roadnet.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/>Дорожная инфраструктура</div>
+          <div class="safe-content"><img src="/resources/objects/roadnet.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 0;"/><span data-i18n="favObjLabelRoadInfrastructure"></span></div>
         </label>
       </span>
     </div>
@@ -149,7 +150,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-favorite-object_parking" for="favorite-object_parking">
-          <div class="safe-content"><img src="/resources/objects/parking.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 3px;"/>Парковки</div>
+          <div class="safe-content"><img src="/resources/objects/parking.svg" style="width: 25px; height: 25px; vertical-align: bottom; margin-bottom: -6px; margin-right: 7px; margin-left: 5px; border-radius: 3px;"/><span data-i18n="favObjLabelParking"></span></div>
         </label>
       </span>
     </div>
