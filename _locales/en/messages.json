@@ -168,7 +168,7 @@
     "message": "Role"
   },
   "settingsReset": {
-    "message": "Settings reset"
+    "message": "Settings have been reset"
   },
   "addFavoriteObject": {
     "message": "Add object to favorites"
@@ -527,10 +527,252 @@
   "resettlementNotStartedInfoCenterAddressLater": {
     "message": "Resettlement of the house has not yet begun. The address of the Information Center will be published on the day the resettlement starts."
   },
-  "manifestName": {
+  "extName": {
     "message": "Additional tools"
   },
-  "manifestDescription": {
+  "extDescription": {
     "message": "The expansion adds new special features to the Yandex Map Editor"
-  }
+  },
+  "indexHeading": {
+    "message": "What are Additional YME Tools"
+  },
+  "indexIntroP1": {
+    "message": "This is an extension that adds new features to the "
+  },
+  "indexIntroLinkYME": {
+    "message": "Yandex Map Editor"
+  },
+  "indexIntroP2": {
+    "message": ". These features are mainly intended for experienced users."
+  },
+  "indexNotOfficial": {
+    "message": "This is not an official Yandex extension"
+  },
+  "indexFeedbackNoteP1": {
+    "message": "If you have a request or question, you can ask "
+  },
+  "indexFeedbackNoteLinkDev": {
+    "message": "to the developer"
+  },
+  "indexFeedbackNoteP2": {
+    "message": " via Yandex.Messenger. If you yourself know how to fix the error - please, "
+  },
+  "indexFeedbackNoteLinkCreateIssue": {
+    "message": "create an Issue"
+  },
+  "indexFeedbackNoteP3": {
+    "message": " in the extension repository or "
+  },
+  "indexFeedbackNoteLinkPullRequest": {
+    "message": "do Pull request"
+  },
+  "indexFeedbackNoteP4": {
+    "message": "."
+  },
+  "favObjHeading": {
+    "message": "Favorite objects"
+  },
+  "favObjIntro": {
+    "message": "You can choose which categories of objects will be displayed in the list of favorites, we recommend that you choose not too many if you have a small screen height."
+  },
+  "favObjLabelRoads": {
+    "message": "Roads"
+  },
+  "favObjLabelBuildings": {
+    "message": "Buildings"
+  },
+  "favObjLabelAddressPoints": {
+    "message": "Address points"
+  },
+  "favObjLabelPOIs": {
+    "message": "Points of interest"
+  },
+  "favObjLabelTransportType": {
+    "message": "Transport type"
+  },
+  "favObjLabelVegetation": {
+    "message": "Vegetation"
+  },
+  "favObjLabelTerrain": {
+    "message": "Terrain"
+  },
+  "favObjLabelHydrography": {
+    "message": "Hydrography"
+  },
+  "favObjLabelTerritory": {
+    "message": "Territory"
+  },
+  "favObjLabelAdminDivision": {
+    "message": "Administrative division"
+  },
+  "favObjLabelRoadInfrastructure": {
+    "message": "Road infrastructure"
+  },
+  "favObjLabelParking": {
+    "message": "Parking"
+  },
+  "frMosRuHeading": {
+    "message": "Фонд реновации — mos.ru"
+  },
+  "frMosRuIntroP1": {
+    "message": "Подгрузка данных "
+  },
+  "frMosRuIntroLink1": {
+    "message": "программы реновации в Москве"
+  },
+  "frMosRuIntroP2": {
+    "message": ". Модуль подключается по заявкам через "
+  },
+  "frMosRuIntroLink2": {
+    "message": "специальную форму"
+  },
+  "frMosRuIntroP3": {
+    "message": "."
+  },
+  "frMosRuEnableModuleTitle": {
+    "message": "Включить модуль"
+  },
+  "frMosRuEnableModuleDescP1": {
+    "message": "Не включайте модуль, если Ваша заявка ещё не одобрена — Вы будете получать уведомление"
+  },
+  "frMosRuEnableModuleDescP2": {
+    "message": "об ошибке при работе с Народной картой"
+  },
+  "frMosRuConnectionParamsHeading": {
+    "message": "Параметры подключения"
+  },
+  "frMosRuConnectionParamsDesc": {
+    "message": "Укажите информацию, полученную в письме с информацией об одобрении заявки"
+  },
+  "frMosRuApiAddressLabel": {
+    "message": "Адрес API"
+  },
+  "frMosRuAccessTokenLabel": {
+    "message": "Ключ доступа"
+  },
+  "frMosRuSaveButton": {
+    "message": "Сохранить параметры"
+  },
+  "langSwitcherLabel": {
+    "message": "Language:"
+  },
+  "langOptionRussian": {
+    "message": "Russian"
+  },
+  "langOptionEnglish": {
+    "message": "English"
+  },
+  "openSvcHeading": {
+    "message": "Map services"
+  },
+  "openSvcIntro": {
+    "message": "You can choose which map services will be available to go to them from the Yandex Map Editor."
+  },
+  "openSvcIfSettingsHeading": {
+    "message": "Interface settings"
+  },
+  "openSvcIfSettingsDesc": {
+    "message": "Affects how the transition interface will look in the Yandex Map Editor."
+  },
+  "openSvcLabelBottomMenuButton": {
+    "message": "Button in the bottom menu"
+  },
+  "openSvcLabelMinIndent": {
+    "message": "Minimum indentation in the menu opened by the button at the bottom"
+  },
+  "openSvcLabelRightMenuButtons": {
+    "message": "Buttons on the right menu"
+  },
+  "openSvcServiceListHeading": {
+    "message": "List of services"
+  },
+  "openSvcLabelNspdGov": {
+    "message": "Public cadastral map"
+  },
+  "openSvcLabelMapRu": {
+    "message": "Map.ru"
+  },
+  "openSvcLabel2gis": {
+    "message": "2GIS"
+  },
+  "openSvcLabelGoogle": {
+    "message": "Google Maps"
+  },
+  "openSvcLabelOsm": {
+    "message": "OpenStreetMap"
+  },
+  "openSvcLabelRetromap": {
+    "message": "Retromap"
+  },
+  "openSvcLabelStrava": {
+    "message": "Strava"
+  },
+  "openSvcLabelHere": {
+    "message": "Here"
+  },
+  "openSvcLabelWikimapia": {
+    "message": "Wikimapia"
+  },
+  "sysInfoHeading": {
+    "message": "System information"
+  },
+  "sysInfoResetButton": {
+    "message": "Reset Settings"
+  },
+  "sysInfoResetTooltip": {
+    "message": "The module settings will be reset to defaults"
+  },
+  "unitMilliseconds": {
+    "message": " ms"
+  },
+  "checkAddrPopupCurrent": {
+    "message": "Current address point — "
+  },
+  "checkAddrPopupSuggested": {
+    "message": "Suggested address point — "
+  },
+  "checkAddrCloseEscTooltip": {
+    "message": "Close (Esc)"
+  },
+  "checkAddrStateNotAvailable": {
+    "message": "not available"
+  },
+  "checkAddrSuggestedLabel": {
+    "message": "Suggested address"
+  },
+  "monthJanuary": { "message": "january" },
+  "monthFebruary": { "message": "february" },
+  "monthMarch": { "message": "march" },
+  "monthApril": { "message": "april" },
+  "monthMay": { "message": "may" },
+  "monthJune": { "message": "june" },
+  "monthJuly": { "message": "july" },
+  "monthAugust": { "message": "august" },
+  "monthSeptember": { "message": "september" },
+  "monthOctober": { "message": "october" },
+  "monthNovember": { "message": "november" },
+  "monthDecember": { "message": "december" },
+  "profileEmployeeRemoved": { "message": "Employee removed" },
+  "profileStatusOutsourcer": { "message": "Outsourcer" },
+  "profileStatusRobot": { "message": "Robot" },
+  "profileTooltipIndoorPlan": { "message": "Indoor plan" },
+  "profileTooltipTransportRoutes": { "message": "Route options transportation" },
+  "profileErrorModuleNotRunning": { "message": "Module for loading additional information into the profile is not running" },
+  "userRoleYandexStaff": { "message": "Yandex Staff" },
+  "userRoleModerator": { "message": "Moderator" },
+  "userStatusBanned": { "message": "Blocked" },
+  "userTrustLevelNovice": { "message": "Newbie" },
+  "userTrustLevelRecentlyUnlocked": { "message": "Recently unlocked" },
+  "userRoleExpert": { "message": "Expert" },
+  "userRoleOutsourcerBadge": { "message": "outsourcer" },
+  "labelToday": { "message": "today" },
+  "labelYesterday": { "message": "yesterday" },
+  "labelTimeConnector": { "message": " at " },
+  "userBanPeriodFromTo": { "message": "from $1$ to $2$" },
+  "userBanPeriodIndefinitelyFrom": { "message": "Indefinitely from $1$" },
+  "getUserCloseEscTooltip": { "message": "Close (Esc)" },
+  "getUserSearchPlaceholder": { "message": "Enter your nickname or login" },
+  "getUserModuleNotRunningError": { "message": "The user search module is not running" },
+  "getUserInfoYndxTitle": { "message": "Outsourcer" },
+  "lockPatternBlockButtonState": { "message": "Block" }
 }

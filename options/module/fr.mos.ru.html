@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru"> <!-- Will be changed to 'en' by i18n script or should be dynamic -->
     <head>
         <meta charset="utf8">
         <link href="/options/style.css" rel="stylesheet"/>
         <script src="/jquery-3.3.1.min.js"></script>
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../style.css"> <!-- This path seems relative, ensure it works -->
+        <script src="/resources/js/i18n.js"></script> <!-- Added i18n script -->
     </head>
     <body>
-        <h1>Фонд реновации — mos.ru</h1>
-        <p class="p" style="margin-bottom: 20px;">Подгрузка данных <a href="https://fr.mos.ru/">программы реновации в Москве</a>. Модуль подключается по заявкам через <a id="fr_mos_ru_form" href="https://forms.yandex.ru/cloud/66c8888a068ff031ae021271/">специальную форму</a>.</p>
+        <h1 data-i18n="frMosRuHeading"></h1>
+        <p class="p" style="margin-bottom: 20px;">
+            <span data-i18n="frMosRuIntroP1"></span>
+            <a href="https://fr.mos.ru/" data-i18n="frMosRuIntroLink1"></a>
+            <span data-i18n="frMosRuIntroP2"></span>
+            <a id="fr_mos_ru_form" href="https://forms.yandex.ru/cloud/66c8888a068ff031ae021271/" data-i18n="frMosRuIntroLink2"></a>
+            <span data-i18n="frMosRuIntroP3"></span>
+        </p>
         <!---->
         <div class="item-checkbox p">
           <span class="checkbox checkbox_theme_normal checkbox_size_m checkbox_view_classic checkbox_lines_multi i-bem checkbox_js_inited">
@@ -18,20 +25,24 @@
             </span>
             <label class="checkbox__label" aria-hidden="true" id="lable-fr_mos_ru" for="fr_mos_ru">
               <div class="safe-content">
-                <p class="title">Включить модуль</p>
-                <p class="description">Не включайте модуль, если Ваша заявка ещё не одобрена — Вы будете получать уведомление<br/>об ошибке при работе с Народной картой</p>
+                <p class="title" data-i18n="frMosRuEnableModuleTitle"></p>
+                <p class="description">
+                    <span data-i18n="frMosRuEnableModuleDescP1"></span>
+                    <br/>
+                    <span data-i18n="frMosRuEnableModuleDescP2"></span>
+                </p>
               </div>
             </label>
           </span>
         </div>
         <!---->
-        <h2>Параметры подключения</h2>
-        <p class="p" style="margin-bottom: 20px;">Укажите информацию, полученную в письме с информацией об одобрении заявки</p>
+        <h2 data-i18n="frMosRuConnectionParamsHeading"></h2>
+        <p class="p" style="margin-bottom: 20px;" data-i18n="frMosRuConnectionParamsDesc"></p>
         <!---->
         <div class="item-input p">
           <span class="input">
             <label class="checkbox__label" aria-hidden="true" id="lable-fr_mos_ru_api" for="fr_mos_ru_api">
-              <p class="title">Адрес API</p>
+              <p class="title" data-i18n="frMosRuApiAddressLabel"></p>
               <input class="input__text" type="text" id="fr_mos_ru_api">
             </label>
           </span>
@@ -40,13 +51,14 @@
         <div class="item-input p">
           <span class="input">
             <label class="checkbox__label" aria-hidden="true" id="lable-fr_mos_ru_token" for="fr_mos_ru_token">
-              <p class="title">Ключ доступа</p>
+              <p class="title" data-i18n="frMosRuAccessTokenLabel"></p>
               <input class="input__text" type="text" id="fr_mos_ru_token">
             </label>
           </span>
         </div>
 
-        <button id="save-button" class="doc-button doc-button_theme_islands doc-button_size_l doc-button_view_action doc-button_hovered doc-form-submit-view__submit" type="button"><span class="doc-button__text">Сохранить параметры</span><!----></button>
+        <button id="save-button" class="doc-button doc-button_theme_islands doc-button_size_l doc-button_view_action doc-button_hovered doc-form-submit-view__submit" type="button">
+            <span class="doc-button__text" data-i18n="frMosRuSaveButton"></span><!----></button>
         <span id="info" style="position: absolute;line-height: 31px" data-info=""></span>
 
         <script src="/options/js/module.js"></script>
