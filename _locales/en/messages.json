@@ -1,15 +1,15 @@
 {
   "whatAreExtendedToolsNYAK": {
-    "message": "What are Extended Tools NYAK"
+    "message": "What are Additional YME Tools"
   },
   "extendedToolsNYAKDescription": {
-    "message": "This is an extension that adds new features to the People's Map. These features are mainly intended for experienced users."
+    "message": "This is an extension that adds new features to the Yandex Map Editor. These features are mainly intended for experienced users."
   },
   "notOfficialYandexExtension": {
     "message": "This is not an official Yandex extension"
   },
   "feedbackAndSupport": {
-    "message": "If you have a wish or question, you can ask the developer via Yandex.Messenger. If you know how to fix a bug yourself, please create an Issue in the extension repository or make a Pull request."
+    "message": "If you have a request or question, you can ask to the developer via Yandex.Messenger. If you yourself know how to fix the error - please, создайте Issue in the extension repository or do Pull request."
   },
   "modules": {
     "message": "Modules"
@@ -24,7 +24,7 @@
     "message": "Adds the option to check the address points added to Yandex.Maps"
   },
   "favoriteObjects": {
-    "message": "Favorite Objects"
+    "message": "Favorite objects"
   },
   "favoriteObjectsDescription": {
     "message": "Includes in the left menu a block with the favorite categories of objects, which are available for quick creation."
@@ -198,52 +198,52 @@
     "message": "Failed to get information from the Renovation Fund"
   },
   "somethingWentWrong": {
-    "message": "Sorry, something went wrong"
+    "message": "Sorry, something went wrong."
   },
   "searchUsers": {
-    "message": "Search users"
+    "message": "Search for users"
   },
   "startTypingLoginToSearch": {
-    "message": "Start typing login to search"
+    "message": "To search, start typing Login"
   },
   "nothingFoundForQuery": {
-    "message": "Nothing found for your query"
+    "message": "The request did not find anything"
   },
   "deleted": {
     "message": "deleted"
   },
   "specialRights": {
-    "message": "Special rights"
+    "message": "Special Permissions"
   },
   "registrationDate": {
-    "message": "Registration date"
+    "message": "Date of registration"
   },
   "ratingPosition": {
-    "message": "Rating position"
+    "message": "Top user place"
   },
   "editCount": {
-    "message": "Edit count"
+    "message": "Made edits"
   },
   "inaccuraciesResolved": {
-    "message": "Inaccuracies resolved"
+    "message": "Resolved possible problems"
   },
   "banDuration": {
-    "message": "Ban duration"
+    "message": "Blocking period"
   },
   "banReason": {
-    "message": "Ban reason"
+    "message": "Reason for blocking"
   },
   "userHasNoEdits": {
     "message": "User has no edits"
   },
   "checkAddresses": {
-    "message": "Check addresses"
+    "message": "Check address points"
   },
   "road": {
-    "message": "Road"
+    "message": "Street"
   },
   "addressList": {
-    "message": "Address list"
+    "message": "House numbers"
   },
   "cancel": {
     "message": "Cancel"
@@ -252,34 +252,34 @@
     "message": "Check"
   },
   "checkingInProgress": {
-    "message": "Checking in progress"
+    "message": "Check in progress."
   },
   "unaddedAddresses": {
-    "message": "Unadded addresses"
+    "message": "Not added address points"
   },
   "addressesNotInList": {
-    "message": "Addresses not in list"
+    "message": "Non-existent address points"
   },
   "addressesWithError": {
-    "message": "Addresses with error"
+    "message": "Address points with an error"
   },
   "allAddressesAdded": {
-    "message": "All addresses added"
+    "message": "All address points added"
   },
   "allAddressesExist": {
-    "message": "All addresses exist"
+    "message": "All address points exist"
   },
   "noErrorsInAddresses": {
-    "message": "No errors in addresses"
+    "message": "There are no errors in the address points"
   },
   "noAddressErrorsFound": {
-    "message": "No address errors found"
+    "message": "Errors in the address points were not found"
   },
   "houseNumbersCommaSeparated": {
-    "message": "House numbers must be comma-separated"
+    "message": "House numbers must be separated by commas"
   },
   "houseNumbersNoRoadName": {
-    "message": "House numbers in the list should not contain the road name"
+    "message": "House numbers must not contain the name of the road"
   },
   "roads": {
     "message": "Roads"
@@ -288,40 +288,40 @@
     "message": "Road infrastructure"
   },
   "trafficConditions": {
-    "message": "Traffic conditions"
+    "message": "Road signs"
   },
   "parking": {
     "message": "Parking"
   },
   "territories": {
-    "message": "Territories"
+    "message": "Territory"
   },
   "buildings": {
     "message": "Buildings"
   },
   "floorPlans": {
-    "message": "Floor plans"
+    "message": "Indoor plans"
   },
   "places": {
-    "message": "Places"
+    "message": "Points of interest"
   },
   "buildingEntrances": {
-    "message": "Building entrances"
+    "message": "Entrances"
   },
   "addresses": {
-    "message": "Addresses"
+    "message": "Address points"
   },
   "fences": {
     "message": "Fences"
   },
   "administrativeDivisions": {
-    "message": "Administrative divisions"
+    "message": "Administrative division"
   },
   "vegetation": {
     "message": "Vegetation"
   },
   "relief": {
-    "message": "Relief"
+    "message": "Terrain"
   },
   "hydrography": {
     "message": "Hydrography"
@@ -330,10 +330,10 @@
     "message": "Group edits"
   },
   "transport": {
-    "message": "Transport"
+    "message": "Transport type"
   },
   "highSpeedTransport": {
-    "message": "High-speed transport"
+    "message": "Rapid transit"
   },
   "airTransport": {
     "message": "Air transport"
@@ -345,22 +345,22 @@
     "message": "Water transport"
   },
   "selectTemplate": {
-    "message": "Select template"
+    "message": "Choose a template"
   },
   "selectBanTemplate": {
-    "message": "Select ban template"
+    "message": "Choose a Blocking Template"
   },
   "ignoringComments": {
     "message": "Ignoring comments"
   },
   "unableToContactUser": {
-    "message": "Unable to contact user"
+    "message": "Unable to contact the user"
   },
   "systematicRuleViolations": {
-    "message": "Systematic rule violations"
+    "message": "Systematic abuse of the rules"
   },
   "profanity": {
-    "message": "Profanity"
+    "message": "Obscene language"
   },
   "hateSpeech": {
     "message": "Hate speech"
@@ -369,55 +369,55 @@
     "message": "Vandalism"
   },
   "duplicateBlockedProfile": {
-    "message": "Duplicate blocked profile"
+    "message": "Copy a blocked profile"
   },
   "banMessageIgnoringComments": {
-    "message": "Good day, $1!\n\nUnfortunately, you are ignoring the moderator's comments and continue to make mistakes when drawing the map. Please reply to me in [Yandex.Messenger](https://yandex.ru/chat#/) and I will remove the block ahead of schedule."
+    "message": "Good afternoon, $1!\n\nUnfortunately, you ignore the moderator's comments and continue to make mistakes when edit the map. Please reply to me at [Yandex.Messenger](https://yandex.com/chat#/) and I will remove the blockage early."
   },
   "banDurationUpTo3Days": {
     "message": "Choose any blocking period, but not more than 3 days"
   },
   "banMessageUnableToContact": {
-    "message": "Good day, $1!\n\nUnfortunately, I could not contact you via [Yandex.Messenger](https://yandex.ru/chat#/). Please remove the restriction and write to me, after which I will remove the block ahead of schedule."
+    "message": "Good afternoon, $1!\n\nUnfortunately, I have not been able to contact you through [Yandex.Messenger](https://yandex.com/chat#/). Please remove the restriction and email me, and then I will remove the lock early."
   },
   "recommendedBanDuration1Day": {
-    "message": "Recommended ban duration for this reason is one day"
+    "message": "The recommended lockout period for this reason is a day"
   },
   "banMessageSystematicViolations": {
-    "message": "Good day, $1!\n\nUnfortunately, you make many mistakes when drawing objects, despite their explanation to you.\n\nPlease study the [rules](https://yandex.ru/support/nmaps/) during the blocking period to avoid mistakes in the future."
+    "message": "Good afternoon, $1!\n\nUnfortunately, you make many mistakes when edit objects, despite them being explained to you.\n\nPlease study [rules](https://yandex.com/support/mapeditor/) for the blocking time, so as not to make mistakes in the future."
   },
   "provideLinksToEditsWithErrors": {
-    "message": "It is advisable to provide links to several edits with errors"
+    "message": "It is desirable to provide links to several edits with errors"
   },
   "reasonForProvidingLinks": {
-    "message": "This is necessary so that the user better understands what mistakes he made repeatedly.\n\nLinks can be indicated after the phrase \"... despite their explanation to you.\" On the next line, you can write \"Here are a few examples of them:\" and on a new line indicate links to edits with a description of the error.\n\nTo ensure that the reason for blocking has a single writing style, it is recommended to use a construction of the form:\n— [Brief description of the error](link to the edit)"
+    "message": "This is necessary so that the user can better understand what mistakes he has made repeatedly.\n\nReferences can be specified after the phrase «... in spite of their explanation to you». On the next line you can write «Here are a few examples of them:» and on a new line provide links to edits with a description of the mistake.\n\nFor the reason for blocking to have a uniform writing style, it is recommended to use a construction of the form:\n— [Short description of the error](link to edit)"
   },
   "banMessageProfanity": {
-    "message": "Good day, $1!\n\nIn the People's Map, the use of profanity in comments or profiles is prohibited. Please reconsider your attitude to cartography and study the [rules](https://yandex.ru/support/nmaps/) during the blocking period."
+    "message": "Good afternoon, $1!\n\nIn Yandex Map Editor prohibits the use of profanity in comments or profile. Please reconsider your attitude to cartography and study [rules] during the blocking period(https://yandex.com/support/mapeditor/)"
   },
   "banMessageHateSpeech": {
-    "message": "Good day, $1!\n\nIn the People's Map, the use of statements aimed at inciting hatred or enmity or humiliating the dignity of a person or group of persons is prohibited.\n\nPlease reconsider your attitude to cartography and study the [rules](https://yandex.ru/support/nmaps/) during the blocking period."
+    "message": "Good afternoon, $1!\n\nIn Yandex Map Editor prohibits the use of statements directed at inciting hatred or enmity, or at disparagement of a person or group of persons.\n\nPlease reconsider your attitude to cartography and study [rules] during the blocking period(https://yandex.com/support/mapeditor/)"
   },
   "banMessageVandalism": {
-    "message": "Good day, $1!\n\nUnfortunately, your edits have been recognized as vandalism, so your profile has been blocked forever."
+    "message": "Good afternoon, $1!\n\nUnfortunately, your edits are considered vandalism, so your profile is permanently blocked."
   },
   "recommendedBanDurationPermanent": {
-    "message": "Recommended ban duration for this reason is permanent"
+    "message": "The recommended blocking period for this reason is forever"
   },
   "banMessageDuplicateProfile": {
-    "message": "Good day, $1!\n\nUnfortunately, your profile has been recognized as a duplicate of another, blocked profile."
+    "message": "Good afternoon, $1!\n\nUnfortunately, your profile is recognized as a copy of another one, of a blocked profile."
   },
   "provideLinkToOtherProfile": {
-    "message": "It is advisable to provide a link to another profile of this user"
+    "message": "It is desirable to provide a link to another profile of this user"
   },
   "reasonForProvidingProfileLink": {
-    "message": "This is necessary so that in the event of a dispute, it is easier to find a duplicate profile.\n\nThe link can be indicated instead of the inscription \"blocked profile\".\n\nTo ensure that the reason for blocking has a single writing style, it is recommended to use a construction of the form: [blocked profile](link to profile)"
+    "message": "This is to make it easier to find a copy of the profile if a dispute arises.\n\nThe link can be specified instead of the inscription «of a blocked profile».\n\nTo make the reason for blocking have a uniform writing style, it is recommended to use a construction like: [blocked profile](link to profile)"
   },
   "appealBanMessage": {
-    "message": "\n\nYou can always appeal the blocking through [support service](https://yandex.ru/support/nmaps/troubleshooting/fb_nmaps.html)"
+    "message": "\n\nYou can always appeal a blocking through [support service](https://yandex.com/support/mapeditor/troubleshooting/fb_nmaps.html)"
   },
   "satelliteTileColorCorrection": {
-    "message": "Satellite tile color correction"
+    "message": "Color correction of satellite tiles"
   },
   "applyToScheme": {
     "message": "Apply to scheme"
@@ -429,7 +429,7 @@
     "message": "Contrast"
   },
   "blackAndWhiteBalance": {
-    "message": "Black and white balance"
+    "message": "Black and White Balance"
   },
   "opacity": {
     "message": "Opacity"
@@ -438,10 +438,10 @@
     "message": "Saturation"
   },
   "colorShift": {
-    "message": "Color shift"
+    "message": "Color Shift"
   },
   "colorInversion": {
-    "message": "Color inversion"
+    "message": "Color Inversion"
   },
   "all": {
     "message": "All"
@@ -456,7 +456,7 @@
     "message": "Deleted"
   },
   "criticalErrorOccurred": {
-    "message": "A critical error occurred in the extension"
+    "message": "There was a critical error in the operation of the extension"
   },
   "settings": {
     "message": "Settings"
@@ -480,7 +480,7 @@
     "message": "What's new"
   },
   "noUpdateInformation": {
-    "message": "No update information"
+    "message": "No information about the update"
   },
   "remindLater": {
     "message": "Remind later"
