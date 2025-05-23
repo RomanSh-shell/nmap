@@ -192,7 +192,17 @@
     "message": "houses"
   },
   "moreHouses": {
-    "message": "$1 more $2"
+    "message": "$1 more $2",
+    "placeholders": {
+      "param1": {
+        "content": "$1$",
+        "example": "EX1"
+      },
+      "param2": {
+        "content": "$2$",
+        "example": "EX2"
+      }
+    }
   },
   "failedToGetRenovationInfo": {
     "message": "Failed to get information from the Renovation Fund"
@@ -372,19 +382,37 @@
     "message": "Copy a blocked profile"
   },
   "banMessageIgnoringComments": {
-    "message": "Good afternoon, $1!\n\nUnfortunately, you ignore the moderator's comments and continue to make mistakes when edit the map. Please reply to me at [Yandex.Messenger](https://yandex.com/chat#/) and I will remove the blockage early."
+    "message": "Good afternoon, $1!\n\nUnfortunately, you ignore the moderator's comments and continue to make mistakes when edit the map. Please reply to me at [Yandex.Messenger](https://yandex.com/chat#/) and I will remove the blockage early.",
+    "placeholders": {
+      "param1": {
+        "content": "$1$",
+        "example": "EX1"
+      }
+    }
   },
   "banDurationUpTo3Days": {
     "message": "Choose any blocking period, but not more than 3 days"
   },
   "banMessageUnableToContact": {
-    "message": "Good afternoon, $1!\n\nUnfortunately, I have not been able to contact you through [Yandex.Messenger](https://yandex.com/chat#/). Please remove the restriction and email me, and then I will remove the lock early."
+    "message": "Good afternoon, $1!\n\nUnfortunately, I have not been able to contact you through [Yandex.Messenger](https://yandex.com/chat#/). Please remove the restriction and email me, and then I will remove the lock early.",
+    "placeholders": {
+      "param1": {
+        "content": "$1$",
+        "example": "EX1"
+      }
+    }
   },
   "recommendedBanDuration1Day": {
     "message": "The recommended lockout period for this reason is a day"
   },
   "banMessageSystematicViolations": {
-    "message": "Good afternoon, $1!\n\nUnfortunately, you make many mistakes when edit objects, despite them being explained to you.\n\nPlease study [rules](https://yandex.com/support/mapeditor/) for the blocking time, so as not to make mistakes in the future."
+    "message": "Good afternoon, $1!\n\nUnfortunately, you make many mistakes when edit objects, despite them being explained to you.\n\nPlease study [rules](https://yandex.com/support/mapeditor/) for the blocking time, so as not to make mistakes in the future.",
+    "placeholders": {
+      "param1": {
+        "content": "$1$",
+        "example": "EX1"
+      }
+    }
   },
   "provideLinksToEditsWithErrors": {
     "message": "It is desirable to provide links to several edits with errors"
@@ -393,19 +421,43 @@
     "message": "This is necessary so that the user can better understand what mistakes he has made repeatedly.\n\nReferences can be specified after the phrase «... in spite of their explanation to you». On the next line you can write «Here are a few examples of them:» and on a new line provide links to edits with a description of the mistake.\n\nFor the reason for blocking to have a uniform writing style, it is recommended to use a construction of the form:\n— [Short description of the error](link to edit)"
   },
   "banMessageProfanity": {
-    "message": "Good afternoon, $1!\n\nIn Yandex Map Editor prohibits the use of profanity in comments or profile. Please reconsider your attitude to cartography and study [rules] during the blocking period(https://yandex.com/support/mapeditor/)"
+    "message": "Good afternoon, $1!\n\nIn Yandex Map Editor prohibits the use of profanity in comments or profile. Please reconsider your attitude to cartography and study [rules] during the blocking period(https://yandex.com/support/mapeditor/)",
+    "placeholders": {
+      "param1": {
+        "content": "$1$",
+        "example": "EX1"
+      }
+    }
   },
   "banMessageHateSpeech": {
-    "message": "Good afternoon, $1!\n\nIn Yandex Map Editor prohibits the use of statements directed at inciting hatred or enmity, or at disparagement of a person or group of persons.\n\nPlease reconsider your attitude to cartography and study [rules] during the blocking period(https://yandex.com/support/mapeditor/)"
+    "message": "Good afternoon, $1!\n\nIn Yandex Map Editor prohibits the use of statements directed at inciting hatred or enmity, or at disparagement of a person or group of persons.\n\nPlease reconsider your attitude to cartography and study [rules] during the blocking period(https://yandex.com/support/mapeditor/)",
+    "placeholders": {
+      "param1": {
+        "content": "$1$",
+        "example": "EX1"
+      }
+    }
   },
   "banMessageVandalism": {
-    "message": "Good afternoon, $1!\n\nUnfortunately, your edits are considered vandalism, so your profile is permanently blocked."
+    "message": "Good afternoon, $1!\n\nUnfortunately, your edits are considered vandalism, so your profile is permanently blocked.",
+    "placeholders": {
+      "param1": {
+        "content": "$1$",
+        "example": "EX1"
+      }
+    }
   },
   "recommendedBanDurationPermanent": {
     "message": "The recommended blocking period for this reason is forever"
   },
   "banMessageDuplicateProfile": {
-    "message": "Good afternoon, $1!\n\nUnfortunately, your profile is recognized as a copy of another one, of a blocked profile."
+    "message": "Good afternoon, $1!\n\nUnfortunately, your profile is recognized as a copy of another one, of a blocked profile.",
+    "placeholders": {
+      "param1": {
+        "content": "$1$",
+        "example": "EX1"
+      }
+    }
   },
   "provideLinkToOtherProfile": {
     "message": "It is desirable to provide a link to another profile of this user"
@@ -768,8 +820,28 @@
   "labelToday": { "message": "today" },
   "labelYesterday": { "message": "yesterday" },
   "labelTimeConnector": { "message": " at " },
-  "userBanPeriodFromTo": { "message": "from $1$ to $2$" },
-  "userBanPeriodIndefinitelyFrom": { "message": "Indefinitely from $1$" },
+  "userBanPeriodFromTo": {
+    "message": "from $1$ to $2$",
+    "placeholders": {
+      "param1": {
+        "content": "$1$",
+        "example": "EX1"
+      },
+      "param2": {
+        "content": "$2$",
+        "example": "EX2"
+      }
+    }
+  },
+  "userBanPeriodIndefinitelyFrom": {
+    "message": "Indefinitely from $1$",
+    "placeholders": {
+      "param1": {
+        "content": "$1$",
+        "example": "EX1"
+      }
+    }
+  },
   "getUserCloseEscTooltip": { "message": "Close (Esc)" },
   "getUserSearchPlaceholder": { "message": "Enter your nickname or login" },
   "getUserModuleNotRunningError": { "message": "The user search module is not running" },
