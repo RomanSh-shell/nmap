@@ -90,7 +90,7 @@
 
       tableElement.find("#nk").append("<h2>" + chrome.i18n.getMessage("narodnayaKarta") + "</h2>");
 
-      creatRowTable(tableElement.find("#nk"), chrome.i18n.getMessage("downloadSpeed"), totalTime + " мс");
+      creatRowTable(tableElement.find("#nk"), chrome.i18n.getMessage("downloadSpeed"), totalTime + chrome.i18n.getMessage("unitMilliseconds"));
       creatRowTable(tableElement.find("#nk"), chrome.i18n.getMessage("version"), config.version);
 
       const data = [
