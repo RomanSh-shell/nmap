@@ -7,7 +7,7 @@
 (function () {
   let lastId = null;
 
-  const month = ['monthJanuary', 'monthFebruary', 'monthMarch', 'monthApril', 'monthMay', 'monthJune', 'monthJuly', 'monthAugust', 'monthSeptember', 'monthOctober', 'monthNovember', 'monthDecember'];
+  const month = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
   
   const text = window.appChrome.text.getUser;
   const creatElement = window.appChrome.creatElement;
@@ -22,7 +22,7 @@
 
   const formatDate = (date) => {    
     let day = date.getDate();
-    let month_text = chrome.i18n.getMessage(month[date.getMonth()]);
+    let month_text = month[date.getMonth()];
     let years = date.getFullYear() % 10000;
 
     return day + ' ' + month_text + ' ' + years;
@@ -47,7 +47,7 @@
       status.before('<div class="nk-user-profile-view__name nk-user-name-view_deleted">' + user.displayName + '</div>');
       
       if (user.outsourcer || user.yandex) {
-        status.text(chrome.i18n.getMessage("profileEmployeeRemoved"));
+        status.text("Сотрудник удалён");
       }
       
       const icon = profileHeader.find(".nk-user-icon_size_large");
@@ -66,12 +66,12 @@
 
     /* Аутсорсер ли */
     if (user.outsourcer && user.status !== "deleted") {
-      profileHeader.find(".nk-user-profile-view__name").after('<div class="nk-user-profile-view__status">' + chrome.i18n.getMessage("profileStatusOutsourcer") + '</div>'); 
+      profileHeader.find(".nk-user-profile-view__name").after('<div class="nk-user-profile-view__status">Аутсорсер</div>'); 
     }
     
     /* Робот ли */
     if (user.moderationStatus === "robot" && user.status !== "deleted") {
-      profileHeader.find(".nk-user-profile-view__name").after('<div class="nk-user-profile-view__status">' + chrome.i18n.getMessage("profileStatusRobot") + '</div>'); 
+      profileHeader.find(".nk-user-profile-view__name").after('<div class="nk-user-profile-view__status">Робот</div>'); 
     }
 
     /* Добавление информации о должности и/или специальных правах */
@@ -125,7 +125,7 @@
 
               const groupIcon = infoAccessElement.find(".nk-user-stat-badge-view_id_indoor-group");
               groupIcon.hover(() => {
-                popup.find(".nk-popup__content").text(chrome.i18n.getMessage("profileTooltipIndoorPlan"));
+                popup.find(".nk-popup__content").text("Схемы помещений");
 
                 const topPopup = groupIcon[0].offsetHeight + groupIcon.offset().top + 5;
                 const leftPopup = window.innerWidth - groupIcon.offset().left;
@@ -159,7 +159,7 @@
 
                   const transportIcon = infoAccessElement.find(".nk-user-stat-badge-view_id_transport-group");
                   transportIcon.hover(() => {
-                    popup.find(".nk-popup__content").text(chrome.i18n.getMessage("profileTooltipTransportRoutes"));
+                    popup.find(".nk-popup__content").text("Нитки транспорта");
 
                     const topPopup = transportIcon[0].offsetHeight + transportIcon.offset().top + 5;
                     const leftPopup = window.innerWidth - transportIcon.offset().left;
@@ -287,7 +287,7 @@
       const appViewElement = document.querySelector(".nk-app-view");
       editAppView.observe(appViewElement, {childList: true});
     }catch {
-      window.appChrome.notification("error", chrome.i18n.getMessage("profileErrorModuleNotRunning"));
+      window.appChrome.notification("error", "Модуль подгрузки дополнительной информации в профиль не запущен");
     }
   };
   
