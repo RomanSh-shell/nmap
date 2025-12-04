@@ -18,6 +18,7 @@
         "/resources/style.css"
       ],
       "js": [
+        "resources/browser-polyfill.js",
         "jquery-3.3.1.min.js",
         "debounce.js",
         "/resources/fr.mos.ru.js",
@@ -39,6 +40,7 @@
     {
       "matches": ["https://yandex.ru/q/*"],
       "js": [
+        "resources/browser-polyfill.js",
         "/resources/module/q.js"
       ]
     }
@@ -55,7 +57,17 @@
   "permissions": [
     "storage"
   ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "nmap-tools@example.com",
+      "strict_min_version": "57.0"
+    }
+  },
   "background": {
-    "service_worker": "resources/system.js"
+    "service_worker": "resources/system.js",
+    "scripts": [
+      "resources/browser-polyfill.js",
+      "resources/system.js"
+    ]
   }
 }
