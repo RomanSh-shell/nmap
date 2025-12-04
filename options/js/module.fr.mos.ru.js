@@ -20,7 +20,7 @@
     settings.fr_mos_ru_token = fr_mos_ru_token.val();
 
     chrome.storage.local.set({ "nkSetting": settings }, () => {
-      info.attr("data-info", "Настройки сохранены");
+      info.attr("data-info", chrome.i18n.getMessage("settingsSaved"));
     });
   });
 

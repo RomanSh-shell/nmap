@@ -39,42 +39,45 @@
     return row;
   };
 
-  creatRowTable(tableElement.find("#info"), "Версия расширения", manifest.version);
+  creatRowTable(tableElement.find("#info"), chrome.i18n.getMessage("extensionVersion"), manifest.version);
 
-
+  let browserName;
   if (userAgent.indexOf("Firefox") > -1) {
-    browser = "Mozilla Firefox " + userAgent.split("Firefox/")[1].split(" ")[0];
+    browserName = chrome.i18n.getMessage("mozillaFirefox") + " " + userAgent.split("Firefox/")[1].split(" ")[0];
   }else if (userAgent.indexOf("Opera") > -1) {
-    browser = "Opera " + userAgent.split("Opera/")[1].split(" ")[0];
+    browserName = chrome.i18n.getMessage("opera") + " " + userAgent.split("Opera/")[1].split(" ")[0];
   }else if (userAgent.indexOf("OPR") > -1) {
-    browser = "Opera " + userAgent.split("OPR/")[1].split(" ")[0];
+    browserName = chrome.i18n.getMessage("opera") + " " + userAgent.split("OPR/")[1].split(" ")[0];
   }else if (userAgent.indexOf("Trident") > -1) {
-    browser = "Internet Explorer " + userAgent.split("Trident/")[1].split(" ")[0];
+    browserName = chrome.i18n.getMessage("internetExplorer") + " " + userAgent.split("Trident/")[1].split(" ")[0];
   }else if (userAgent.indexOf("Edge") > -1) {
-    browser = "Microsoft Edge " + userAgent.split("Edge/")[1].split(" ")[0];
+    browserName = chrome.i18n.getMessage("microsoftEdge") + " " + userAgent.split("Edge/")[1].split(" ")[0];
   }else if (userAgent.indexOf("YaBrowser") > -1) {
-    browser = "Яндекс Браузер " + userAgent.split("YaBrowser/")[1].split(" ")[0];
+    browserName = chrome.i18n.getMessage("yandexBrowser") + " " + userAgent.split("YaBrowser/")[1].split(" ")[0];
   }else if (userAgent.indexOf("Chrome") > -1) {
-    browser = "Google Chrome " + userAgent.split("Chrome/")[1].split(" ")[0];
+    browserName = chrome.i18n.getMessage("googleChrome") + " " + userAgent.split("Chrome/")[1].split(" ")[0];
   }else if (userAgent.indexOf("Safari") > -1) {
-    browser = "Safari " + userAgent.split("Safari/")[1].split(" ")[0];
+    browserName = chrome.i18n.getMessage("safari") + " " + userAgent.split("Safari/")[1].split(" ")[0];
   }else {
-    browser = "Не определен";
+    browserName = chrome.i18n.getMessage("notDetermined");
   }
 
-  creatRowTable(tableElement.find("#info"), "Браузер", browser);
+  creatRowTable(tableElement.find("#info"), chrome.i18n.getMessage("browser"), browserName);
 
-
-  const osElement = creatRowTable(tableElement.find("#info"), "Операционная система", "");
+  const osElement = creatRowTable(tableElement.find("#info"), chrome.i18n.getMessage("operatingSystem"), "");
   chrome.runtime.getPlatformInfo((response) => {
-    osElement.find(".doc-value").text(OS[response.os]);
+    let osName = chrome.i18n.getMessage("notDetermined");
+    if (response.os === "win") osName = chrome.i18n.getMessage("windows");
+    if (response.os === "mac") osName = chrome.i18n.getMessage("macOS");
+    if (response.os === "linux") osName = chrome.i18n.getMessage("linux");
+    osElement.find(".doc-value").text(osName);
   });
 
-  creatRowTable(tableElement.find("#info"), "Поддержка cookie", navigator.cookieEnabled ? "Да" : "Нет");
+  creatRowTable(tableElement.find("#info"), chrome.i18n.getMessage("cookieSupport"), navigator.cookieEnabled ? chrome.i18n.getMessage("yes") : chrome.i18n.getMessage("no"));
 
   chrome.storage.local.get(["nkSetting"], (result) => {
     setting = result.nkSetting;
-    moduleElement = creatRowTable(tableElement.find("#info"), "Подключенные модули", "").find(".doc-value");
+    moduleElement = creatRowTable(tableElement.find("#info"), chrome.i18n.getMessage("connectedModules"), "").find(".doc-value");
   });
 
   $.ajax({
@@ -85,10 +88,10 @@
       const config = JSON.parse(response.split('id="config"')[1].split(">")[1].split("<")[0]);
       const totalTime = new Date().getTime() - ajaxTime;
 
-      tableElement.find("#nk").append("<h2>Народная карта</h2>");
+      tableElement.find("#nk").append("<h2>" + chrome.i18n.getMessage("narodnayaKarta") + "</h2>");
 
-      creatRowTable(tableElement.find("#nk"), "Скорость загрузки", totalTime + " мс");
-      creatRowTable(tableElement.find("#nk"), "Версия", config.version);
+      creatRowTable(tableElement.find("#nk"), chrome.i18n.getMessage("downloadSpeed"), totalTime + chrome.i18n.getMessage("unitMilliseconds"));
+      creatRowTable(tableElement.find("#nk"), chrome.i18n.getMessage("version"), config.version);
 
       const data = [
         {
@@ -111,14 +114,14 @@
         success: function (response) {
           const user = response.data[0].data;
 
-          let role = "Пользователь";
+          let role = chrome.i18n.getMessage("user");
 
           if (user.moderationStatus === "moderator") {
-            role = "Модератор";
+            role = chrome.i18n.getMessage("moderator");
           }else if (user.outsourcer) {
-            role = "Аутсорсер";
+            role = chrome.i18n.getMessage("outsourcer");
           }else if (user.yandex) {
-            role = "Сотрудник Яндекса";
+            role = chrome.i18n.getMessage("yandexEmployee");
           }
 
           const access = user.moderationStatus === "moderator" || user.outsourcer || user.yandex;
@@ -136,10 +139,10 @@
           }
 
           if (!is_module) {
-            moduleElement.text("Нет подключенных модулей");
+            moduleElement.text(chrome.i18n.getMessage("noConnectedModules"));
           }
 
-          creatRowTable(tableElement.find("#nk"), "Роль", role);
+          creatRowTable(tableElement.find("#nk"), chrome.i18n.getMessage("role"), role);
         }
       });
     }
@@ -154,7 +157,7 @@
 
     chrome.runtime.sendMessage({method: "setSetting"}, () => {});
 
-    $("#restart_setting + span").attr("data-info", "Настройки сброшены");
+    $("#restart_setting + span").attr("data-info", chrome.i18n.getMessage("settingsReset"));
   };
 
   $("#restart_setting").on("click", restartSetting);

@@ -285,7 +285,7 @@
       const dataYandex = element.attr("data-nk-address-yandex");
 
       if (dataUser && dataYandex) {
-        popupContent.html("Текущий адрес — <strong>" + dataYandex + "</strong><br/>Предполагаемый адрес — <strong>" + dataUser +"</strong>");
+        popupContent.html(chrome.i18n.getMessage("checkAddrPopupCurrent") + "<strong>" + dataYandex + "</strong><br/>" + chrome.i18n.getMessage("checkAddrPopupSuggested") + "<strong>" + dataUser +"</strong>");
       }else {
         popupContent.text(dataUser ? dataUser : dataYandex);
       }
@@ -457,7 +457,7 @@
     elementsView.titleElement.colClose.find(".nk-icon_close").on("click", hideView);
     elementsView.titleElement.colClose.hover(() => {      
       popup.css({ "left": window.innerWidth - MAGIC_LEFT_CLOSE + "px", "top": "105px" });
-      popup.find(".nk-popup__content").text("Закрыть (Esc)");
+      popup.find(".nk-popup__content").text(chrome.i18n.getMessage("checkAddrCloseEscTooltip"));
       popup.addClass("nk-popup_visible");
     }, () => {
       popup.removeClass("nk-popup_visible");
@@ -569,7 +569,7 @@
     setTimeout(() => {
       const submitElement = $(".nk-geoobject-editor-view:not(.nk-address-check):not([style*='visibility: hidden;']) .nk-form-submit-view");
       
-      submitElement.before('<div class="nk-section nk-section_level_1"><div class="nk-form-hint-view"><span class="nk-icon nk-icon_id_editor-hint nk-icon_align_auto nk-form-hint-view__icon"><svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path d="M10.504 5.726c.55-.953 1.443-.952 1.992 0l5.508 9.547c.55.953.103 1.726-.996 1.726h-11.016c-1.1 0-1.545-.774-.996-1.726l5.508-9.547z" fill="#FBA233"></path><path fill="#fff" d="M11 9h1v4h-1zM11 14h1v1h-1z"></path></g></svg></span> <span>Предполагаемый адрес<br><strong>' + address + '</strong></span></div></div>');
+      submitElement.before('<div class="nk-section nk-section_level_1"><div class="nk-form-hint-view"><span class="nk-icon nk-icon_id_editor-hint nk-icon_align_auto nk-form-hint-view__icon"><svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><g fill="none"><path d="M10.504 5.726c.55-.953 1.443-.952 1.992 0l5.508 9.547c.55.953.103 1.726-.996 1.726h-11.016c-1.1 0-1.545-.774-.996-1.726l5.508-9.547z" fill="#FBA233"></path><path fill="#fff" d="M11 9h1v4h-1zM11 14h1v1h-1z"></path></g></svg></span> <span>' + chrome.i18n.getMessage("checkAddrSuggestedLabel") + '<br><strong>' + address + '</strong></span></div></div>');
     }, 500);
   };
   
@@ -596,7 +596,7 @@
     const addressBlock = $(".nk-geoobject-viewer-view .nk-grid.nk-sidebar-control.nk-section.nk-section_level_2.nk-geoobject-relations-view:nth-last-child(3) .nk-grid__col.nk-grid__col_span_8");
 
     /* Проверка на тип объекта и наличие адресов */
-    if ((typeObject !== "Дорога" && typeObject !== "Административная единица") || addressBlock.text() === "отсутствуют") {
+    if ((typeObject !== "Дорога" && typeObject !== "Административная единица") || addressBlock.text() === chrome.i18n.getMessage("checkAddrStateNotAvailable")) {
       activeObject = false;
 
       if (!!$(".nk-address-check")[0]) {

@@ -52,20 +52,31 @@
 
         parent.prepend(`<div id="fr_mos_ru" class="nk-section nk-section_level_2"><div class="fr_mos_ru-logo"></div><div class="fr-mos-ru-box fr-mos-ru-box-${info.color}">${info.cat_name}</div><div class="fr_mos_ru-status_text">${info.status_text}</div><div class="fr_mos_ru-center">${info.info_center}</div>${infoFrMosRu?.code ? `<a role="link" class="fr_mos_ru-name_orign" href="https://fr.mos.ru/uchastnikam-programmy/karta-renovatsii/${infoFrMosRu.code}/" target="_blank" rel="noopener noreferrer">${infoFrMosRu.name_orign}</a>` : `<div class="fr_mos_ru-name_orign">${infoFrMosRu.name_orign}</div>`}</div>`);
       }else if (frMosRuStreet) {
-        parent.prepend(`<div id="fr_mos_ru" class="nk-section nk-section_level_2"><div class="fr_mos_ru-logo"></div><div class="fr_mos_ru-status_text">Не участвует в программе реновации</div><div class="fr_mos_ru-center">Этот дом не участвует в программе реновации.</div><div class="fr_mos_ru-name_orign-list fr_mos_ru-name_orign-popout"><span>Дома с этой улицы, участвующие в программе</span></div></div>`);
+        parent.prepend(`<div id="fr_mos_ru" class="nk-section nk-section_level_2"><div class="fr_mos_ru-logo"></div><div class="fr_mos_ru-status_text">${chrome.i18n.getMessage("notInRenovationProgram")}</div><div class="fr_mos_ru-center">${chrome.i18n.getMessage("houseNotInRenovationProgram")}</div><div class="fr_mos_ru-name_orign-list fr_mos_ru-name_orign-popout"><span>${chrome.i18n.getMessage("housesFromStreetInProgram")}</span></div></div>`);
 
         const text = $("#fr_mos_ru .fr_mos_ru-name_orign-list");
         const textPopout = $("#fr_mos_ru .fr_mos_ru-name_orign-popout");
 
         const countAfter5 = frMosRuStreet.items.length - 5;
-        const textCountAfter5 = countAfter5 === 1 ? "домов" : countAfter5 < 5 ? "дома" : "домов";
-
+        let textCountAfter5;
+        if (chrome.i18n.getUILanguage() === 'ru') {
+            if (countAfter5 === 1) {
+                textCountAfter5 = chrome.i18n.getMessage("housesPlural1"); // домов
+            } else if (countAfter5 > 1 && countAfter5 < 5) {
+                textCountAfter5 = chrome.i18n.getMessage("housesPlural2"); // дома
+            } else {
+                textCountAfter5 = chrome.i18n.getMessage("housesPlural1"); // домов
+            }
+        } else {
+            textCountAfter5 = chrome.i18n.getMessage("housesPlural1"); // houses
+        }
+        
         const frMosRuPopup = [...frMosRuStreet.items].splice(0, 5);
 
         popupShow(textPopout, frMosRuPopup.map((item) => {
           const info = window.appChrome.getStatusCategory(item);
           return `— ${item.name}\n     ${info.status_text.replace("\n", ' ')}`;
-        }).join("\n\n") + (countAfter5 > 0 ? `\n\nЕщё ${countAfter5} ${textCountAfter5}` : ''));
+        }).join("\n\n") + (countAfter5 > 0 ? `\n\n${chrome.i18n.getMessage("moreHouses", [countAfter5, textCountAfter5])}` : ''));
 
         const showText = () => {
           text.after(`<div class="fr_mos_ru-name_orign-list-show">${frMosRuStreet.items.map((item) => {
@@ -86,7 +97,7 @@
       }
     }else {
       if (restartCount === 5) {
-        window.appChrome.notification("error", "Не удалось получить информацию от Фонда реновации");
+        window.appChrome.notification("error", chrome.i18n.getMessage("failedToGetRenovationInfo"));
       }else {
         setTimeout(() => {
           render(parent, addres, restartCount + 1);

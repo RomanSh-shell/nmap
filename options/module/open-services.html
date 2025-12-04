@@ -4,14 +4,15 @@
     <meta charset="utf8">
     <link href="/options/style.css" rel="stylesheet"/>
     <script src="/jquery-3.3.1.min.js"></script>
+    <script src="/resources/js/i18n.js"></script> <!-- Ensured i18n script is present -->
   </head>
   <body>
-    <h1 data-info="Настройки модуля">Картографические сервисы</h1>
-    <p class="p" style="margin-bottom: 20px;">Вы можете выбрать, какие картографические сервисы будут доступны для перехода в них из Народной карты.</p>
+    <h1 data-info="Настройки модуля" data-i18n="openSvcHeading"></h1>
+    <p class="p" style="margin-bottom: 20px;" data-i18n="openSvcIntro"></p>
 
     <div class="doc-section">
-      <h2>Настройки интерфейса</h2>
-      <p class="p" style="margin-top: -4px; margin-bottom: 15px;">Влияет на то, как будет выглядеть интерфейс перехода в Народной карте.</p>
+      <h2 data-i18n="openSvcIfSettingsHeading"></h2>
+      <p class="p" style="margin-top: -4px; margin-bottom: 15px;" data-i18n="openSvcIfSettingsDesc"></p>
       <!---->
       <div class="item-checkbox p">
         <span class="checkbox checkbox_theme_normal checkbox_size_m checkbox_view_classic checkbox_lines_multi i-bem checkbox_js_inited">
@@ -20,7 +21,7 @@
             <i class="checkbox__tick"></i>
           </span>
           <label class="checkbox__label" aria-hidden="true" id="lable-setting-button" for="setting-button">
-            <div class="safe-content">Кнопка в нижнем меню</div>
+            <div class="safe-content" data-i18n="openSvcLabelBottomMenuButton"></div>
           </label>
         </span>
       </div>
@@ -32,7 +33,7 @@
             <i class="checkbox__tick"></i>
           </span>
           <label class="checkbox__label" aria-hidden="true" id="lable-button-menu" for="setting-button-menu">
-            <div class="safe-content">Минимальные отступы в меню, вызываемом кнопкой внизу</div>
+            <div class="safe-content" data-i18n="openSvcLabelMinIndent"></div>
           </label>
         </span>
       </div>
@@ -44,13 +45,13 @@
             <i class="checkbox__tick"></i>
           </span>
           <label class="checkbox__label" aria-hidden="true" id="lable-setting-menu" for="setting-menu">
-            <div class="safe-content">Кнопки в правом меню</div>
+            <div class="safe-content" data-i18n="openSvcLabelRightMenuButtons"></div>
           </label>
         </span>
       </div>
     </div>
 
-    <h2 style="margin-top: 40px">Список сервисов</h2>
+    <h2 style="margin-top: 40px" data-i18n="openSvcServiceListHeading"></h2>
     <div class="item-checkbox p" data-info="Кадастровая карта с аэроснимками высокого качества">
       <span class="checkbox checkbox_theme_normal checkbox_size_m checkbox_view_classic checkbox_lines_multi i-bem checkbox_js_inited">
         <span class="checkbox__box">
@@ -58,7 +59,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-nspd-gov" for="nspd-gov">
-          <div class="safe-content">Геоинформационный портал</div>
+          <div class="safe-content" data-i18n="openSvcLabelNspdGov"></div>
         </label>
       </span>
     </div>
@@ -70,7 +71,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-map-ru" for="map-ru">
-          <div class="safe-content">Map.ru</div>
+          <div class="safe-content" data-i18n="openSvcLabelMapRu"></div>
         </label>
       </span>
     </div>
@@ -82,7 +83,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="label-2gis" for="2gis">
-          <div class="safe-content">2ГИС</div>
+          <div class="safe-content" data-i18n="openSvcLabel2gis"></div>
         </label>
       </span>
     </div>
@@ -94,7 +95,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-google" for="google">
-          <div class="safe-content">Google Earth</div>
+          <div class="safe-content" data-i18n="openSvcLabelGoogle"></div>
         </label>
       </span>
     </div>
@@ -106,7 +107,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-osm" for="osm">
-          <div class="safe-content">OpenStreetMap</div>
+          <div class="safe-content" data-i18n="openSvcLabelOsm"></div>
         </label>
       </span>
     </div>
@@ -118,7 +119,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-retromap" for="retromap">
-          <div class="safe-content">Retromap</div>
+          <div class="safe-content" data-i18n="openSvcLabelRetromap"></div>
         </label>
       </span>
     </div>
@@ -130,7 +131,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-starva" for="starva">
-          <div class="safe-content">Starva</div>
+          <div class="safe-content" data-i18n="openSvcLabelStrava"></div>
         </label>
       </span>
     </div>
@@ -142,7 +143,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-here" for="here">
-          <div class="safe-content">Here</div>
+          <div class="safe-content" data-i18n="openSvcLabelHere"></div>
         </label>
       </span>
     </div>
@@ -154,7 +155,7 @@
           <i class="checkbox__tick"></i>
         </span>
         <label class="checkbox__label" aria-hidden="true" id="lable-wikimapia" for="wikimapia">
-          <div class="safe-content">Wikimapia</div>
+          <div class="safe-content" data-i18n="openSvcLabelWikimapia"></div>
         </label>
       </span>
     </div>
