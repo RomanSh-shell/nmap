@@ -53,8 +53,15 @@
   ],
   "options_page": "index.html",
   "permissions": [
-    "storage"
+    "storage",
+    "identity"
   ],
+  "oauth2": {
+    "client_id": "20a5e57c3a524f1984b3be55baa8b358",
+    "scopes": [
+      "cloud_api:disk.app_folder"
+    ]
+  },
   "background": {
     "service_worker": "resources/system.js"
   }
