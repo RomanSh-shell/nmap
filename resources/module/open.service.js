@@ -4,25 +4,17 @@
  * Добавляет возможность перехода на другие карты
  */
 
-    /** Подстановка значений в URL
-     * [z]   — зум карты
-     * [lat] — широта
-     * [lon] — долгота
-     * [h]   — высота в метрах над уровнем моря
-     * [x]   — широта в проекции Меркатора
-     * [y]   — долгота в проекции Меркатора
-    */
 (function () {
   const popupShow = window.appChrome.popupShow;
   const services = {
     "nspd-gov": {
       "title": "Геоинформационный портал",
       "icon": '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 68 68"><path fill="url(#a)" d="M32 2h2l2.2.2a30.4 30.4 0 0 1 14.5 5.5c1.3 1 2.6 1.9 3.7 3H32l-3 .3c-1.6.2-3.1.8-4.6 1.5-1.9.9-3.8 1.8-5.4 3.2a29 29 0 0 0-4.1 4.4c-1 1.4-1.8 3-2.5 4.6-.6 1.5-1.3 3-1.4 4.6a30.1 30.1 0 0 0-.3 3.4V56H34c1.9-.1 3.8-.1 5.6-.8a33 33 0 0 0 4.9-2.3c.7-.4 1.4-1.1 2.3-1H58c-.3.7-.8 1.2-1.3 1.8A30.8 30.8 0 0 1 40 63.9c-1.9.5-3.8.7-5.8.8h-32V32.4a35.3 35.3 0 0 1 1.3-8A31.4 31.4 0 0 1 14.8 8.1a30.4 30.4 0 0 1 15.3-5.9l2-.2z"/><path fill="url(#b)" d="M29.8 15c.8-.4 1.8-.2 2.6-.3h33c.3 0 .6 0 .7.2.1.5-.3.8-.6 1l-8.3 8.6c-.8.7-1.3 1.7-2.4 2-.9.5-1.9.4-2.9.4H19.5c-.3 0-.9 0-1-.4 0-.3.2-.5.4-.6l9-9.2c.6-.6 1.1-1.4 2-1.7z"/><path fill="url(#c)" d="M60.7 26.6c.4-.4.8-1 1.3-1.3h3.2c.3 0 .7 0 1 .2 0 .4-.4.7-.6 1l-9.8 10.1a3.7 3.7 0 0 1-2.5 1H19.5c-.3 0-.6 0-.9-.2-.2-.4.1-.7.3-1l5.2-5.2c.2-.3.5-.3.8-.3h28c1.2 0 2.4-.3 3.6-.7 1.7-.7 2.9-2.3 4.2-3.6z"/><path fill="url(#d)" d="M62 35.8c.2-.2.6-.2.8-.2h2.7c.2 0 .5 0 .6.2.1.4-.3.7-.6 1L55.8 47a3.7 3.7 0 0 1-2.5 1H19.5c-.4 0-.9 0-1-.5 0-.2.3-.5.5-.7l4.7-4.9c.3-.3.6-.3 1-.3h27.7c1.4 0 3-.3 4.3-.8 1.6-.7 2.6-2.1 3.8-3.3l1.5-1.6z"/><defs><linearGradient id="a" x1="57.4" x2="3.3" y1="10.6" y2="65.8" gradientUnits="userSpaceOnUse"><stop stop-color="#4AFFD8"/><stop offset=".3" stop-color="#00CAFF"/><stop offset=".7" stop-color="#2D93FF"/><stop offset="1" stop-color="#007CFF"/></linearGradient><linearGradient id="b" x1="57.4" x2="3.3" y1="10.6" y2="65.8" gradientUnits="userSpaceOnUse"><stop stop-color="#4AFFD8"/><stop offset=".3" stop-color="#00CAFF"/><stop offset=".7" stop-color="#2D93FF"/><stop offset="1" stop-color="#007CFF"/></linearGradient><linearGradient id="c" x1="57.4" x2="3.3" y1="10.6" y2="65.8" gradientUnits="userSpaceOnUse"><stop stop-color="#4AFFD8"/><stop offset=".3" stop-color="#00CAFF"/><stop offset=".7" stop-color="#2D93FF"/><stop offset="1" stop-color="#007CFF"/></linearGradient><linearGradient id="d" x1="57.4" x2="3.3" y1="10.6" y2="65.8" gradientUnits="userSpaceOnUse"><stop stop-color="#4AFFD8"/><stop offset=".3" stop-color="#00CAFF"/><stop offset=".7" stop-color="#2D93FF"/><stop offset="1" stop-color="#007CFF"/></linearGradient></defs></svg>',
-      "url": 'https://nspd.gov.ru/map?thematic=PKK&zoom=[z]&coordinate_x=[x]&coordinate_y=[y]&theme_id=1&is_copy_url=true&baseLayerId=36346&active_layers=37316%2C36329%2C36049%2C36048'
+      "url": 'https://nspd.gov.ru/map?thematic=PKK&zoom=[z]&coordinate_x=[x]&coordinate_y=[y]&theme_id=1&is_copy_url=true&active_layers=賐%2C賑'
     },
     "map-ru": {
       "title": "Map.ru",
-      "icon": '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 26 26"><path fill="url(#a)" d="M0 12.992C0 7.78 0 5.172 1.25 3.3A7.424 7.424 0 0 1 3.3 1.25C5.171 0 7.778 0 12.991 0c5.214 0 7.82 0 9.693 1.25a7.424 7.424 0 0 1 2.048 2.05c1.251 1.872 1.251 4.479 1.251 9.692 0 5.214 0 7.82-1.251 9.693a7.424 7.424 0 0 1-2.048 2.048c-1.873 1.251-4.48 1.251-9.693 1.251-5.213 0-7.82 0-9.693-1.25a7.424 7.424 0 0 1-2.048-2.049C0 20.812 0 18.205 0 12.991Z"/><path fill="#fff" d="M9.197 24.218c-3.986-4.217-3.789-11.077.394-15.03 4.183-3.955 10.824-3.997 15.03.451 2.323 2.459 3.374 5.124 3.222 10.519.034 1.656.11 3.019.166 4.052.076 1.376.12 2.168-.009 2.29-.1.094-.492-.165-.988-.495-.63-.417-1.427-.946-2.012-1.005-8 4-13.303 1.863-15.803-.782Zm11.58-2.293a6.346 6.346 0 1 0-7.753-10.048 6.346 6.346 0 0 0 7.754 10.048z" clip-rule="evenodd" filter="url(#b)" transform="scale(.722)"/><defs><radialGradient id="a" cx="0" cy="0" r="1" gradientTransform="scale(16.024) rotate(44.283 -.611 1.352)" gradientUnits="userSpaceOnUse"><stop offset=".559" stop-color="#6D93FF"/><stop offset="1" stop-color="#5D87FF"/></radialGradient><filter id="b" width="29.756" height="28.954" x="2.327" y="4.26" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0"/><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="2"/><feGaussianBlur stdDeviation="2"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"/><feBlend in2="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_2118_10855"/></filter></defs></svg>',
+      "icon": '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="none"><path fill="url(#a)" d="M0 18C0 10.777 0 7.166 1.733 4.57a10.286 10.286 0 0 1 2.838-2.838C7.166 0 10.777 0 18 0s10.834 0 13.429 1.733a10.285 10.285 0 0 1 2.838 2.838C36 7.166 36 10.777 36 18s0 10.834-1.734 13.429a10.285 10.285 0 0 1-2.837 2.838C28.834 36 25.223 36 18 36S7.166 36 4.571 34.267a10.285 10.285 0 0 1-2.838-2.838C0 28.834 0 25.223 0 17.999Z" style="display:inline"/><path fill="#fff" d="M9.197 24.218c-3.986-4.217-3.789-11.077.394-15.03 4.183-3.955 10.824-3.997 15.03.451 2.323 2.459 3.374 5.124 3.222 10.519.034 1.656.11 3.019.166 4.052.076 1.376.12 2.168-.009 2.29-.1.094-.492-.165-.988-.495-.63-.417-1.427-.946-2.012-1.005-8 4-13.303 1.863-15.803-.782zm11.58-2.293a6.346 6.346 0 1 0-7.753-10.048 6.346 6.346 0 0 0 7.754 10.048z" clip-rule="evenodd" style="display:inline;filter:url(#b)"/><defs><radialGradient id="a" cx="0" cy="0" r="1" gradientTransform="rotate(44.283 -13.565 30.021) scale(22.1998)" gradientUnits="userSpaceOnUse"><stop offset=".559" stop-color="#6D93FF"/><stop offset="1" stop-color="#5D87FF"/></radialGradient><filter id="b" width="29.756" height="28.954" x="2.327" y="4.26" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" lonult="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" lonult="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dy="2"/><feGaussianBlur stdDeviation="2"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"/><feBlend in2="BackgroundImageFix" lonult="effect1_dropShadow_2118_10855"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_2118_10855" lonult="shape"/></filter></defs></svg>',
       "url": 'https://map.ru/pkk?lon=[lat]&lat=[lon]&z=[z]'
     },
     "2gis": {
@@ -33,7 +25,7 @@
     "google": {
       "title": "Google Earth",
       "icon": '<svg xmlns="http://www.w3.org/2000/svg" xml:space="plonerve" viewBox="0 0 4482 4483"><path fill="#255fdb" d="M1545 2708C782 1698-3 2466 202 3172a2242 2242 0 0 0 3922 287c-591 553-1663 460-2579-751z"/><path fill="#4285f4" d="M2228 2012C1178 419 0 1268 0 2242c0 322 69 641 204 934-140-660 618-1169 1324-222 1025 1375 2031 1133 2594 508 180-278 297-592 341-920v4c-241 750-1308 872-2235-534z"/><path fill="#91bfff" d="M2949 1299C2168 12 1179 128 509 818A2234 2234 0 0 0 0 2242c70-943 1210-1598 2241 0 917 1422 2059 1051 2221 308v-7c14-101 20-203 18-305v-102c-397 284-919 174-1531-837z"/><path fill="#c4e1ff" d="M2954 1529c714 1148 1330 854 1528 609-8-172-36-342-83-508-333 7-411-48-738-547-501-768-1132-1286-2235-929a2253 2253 0 0 0-917 665c758-697 1687-508 2445 710z"/><path fill="#f5f5f5" d="M3612 1182c326 499 525 525 787 448A2244 2244 0 0 0 1426 154c985-311 1684 260 2186 1028z"/></svg>',
-      "url": 'https://earth.google.com/web/@[lon],[lat],[h]d'
+      "url": 'https://earth.google.com/web/@[lon],[lat],[z]z'
     },
     "retromap": {
       "title": "Retromap",
@@ -106,17 +98,16 @@
 
     // Добавление панели
     $("body").append('<div class="nk-portal nk-portal_open-service"><!----><div class="nk-popup nk-popup_direction_right-bottom nk-popup_visible nk-popup_theme_islands nk-popup_lontrict-height" style="left: 265px; bottom: 64px; z-index: 1001;"><div class="nk-size-observer"><div class="nk-popup__content"><div class="nk-size-observer"><div class="nk-scrollable nk-scrollable_with-thumb"><div class="nk-scrollable__container" style="max-height: 817px;"><div class="nk-scrollable__content"><div class="nk-size-observer nk-scrollable__content-size-observer"><!----><!----><div class="nk-menu nk-menu_theme_islands nk-menu_mode_check nk-menu_size_m" tabindex="0" style="overflow-y: visible;"></div><!----><!----><!----><!----><!----></div></div></div></div><!----><!----><!----></div><!----></div></div></div></div>');
-    const listBlock = $("body .nk-portal_open-service .nk-menu.nk-menu_theme_islands.nk-menu_mode_check.nk-menu_size_m")
-    
+    const listBlock = $("body .nk-portal_open-service .nk-menu.nk-menu_theme_islands.nk-menu_mode_check.nk-menu_size_m");
+
     let sourceUrl = window.location.href;
-    const url = new URL(sourceUrl.replace("#!", ""));
-    let z = url.searchParams.get('z');
     let lon = sourceUrl.match(/\d{1,3}\.\d*/g)[1];
     let lat = sourceUrl.match(/\d{1,3}\.\d*/g)[0];
-    let h = Math.round(Math.cos(lat * Math.PI / 180) * 96777528.8 / (2 ** z))*100;
     let x = lat * (Math.PI / 180) * 6378137;
     let y = Math.log(Math.tan((Math.PI / 4) + (lon * Math.PI / 180) / 2)) * 6378137;
 
+    const url = new URL(sourceUrl.replace("#!", ""));
+    let z = url.searchParams.get('z');
 
     for (const nameServices in settingOpenServices) {
       if (settingOpenServices[nameServices] && services[nameServices]) {
@@ -137,7 +128,6 @@
           link = link.replaceAll("[z]", z);
           link = link.replaceAll("[x]", x);
           link = link.replaceAll("[y]", y);
-          link = link.replaceAll("[h]", h);
 
           chrome.runtime.sendMessage({method: "openPage", link: link});
         });
@@ -192,13 +182,13 @@
           if (!menu[0]) return;
 
           let sourceUrl = window.location.href;
-          const url = new URL(sourceUrl.replace("#!", ""));
-          let z = url.searchParams.get('z');
-          let lon = sourceUrl.match(/\d{1,3}\.\d*/g)[1];
-          let lat = sourceUrl.match(/\d{1,3}\.\d*/g)[0];
-          let h = Math.round(Math.cos(lat * Math.PI / 180) * 96777528.8 / (2 ** z))*100;
+          let lon = sourceUrl.match(/-?\d{1,3}\.\d*/g)[1];
+          let lat = sourceUrl.match(/-?\d{1,3}\.\d*/g)[0];
           let x = lat * (Math.PI / 180) * 6378137;
           let y = Math.log(Math.tan((Math.PI / 4) + (lon * Math.PI / 180) / 2)) * 6378137;
+
+          const url = new URL(sourceUrl.replace("#!", ""));
+          let z = url.searchParams.get('z');
 
           $("#nk-service-list").remove();
           menu.append('<div id="nk-service-list"><div style="border-top: 1px solid var(--section--border-color); width: calc(100% - 15px); margin: 5px 7.5px;"></div></div>');
@@ -218,7 +208,6 @@
                 link = link.replaceAll("[z]", z);
                 link = link.replaceAll("[x]", x);
                 link = link.replaceAll("[y]", y);
-                link = link.replaceAll("[h]", h);
 
                 chrome.runtime.sendMessage({method: "openPage", link: link});
               });

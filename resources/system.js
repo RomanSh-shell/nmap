@@ -1,3 +1,4 @@
+importScripts('browser-polyfill.js');
 'use strict';
 
 /**
