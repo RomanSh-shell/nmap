@@ -22,6 +22,7 @@
         "debounce.js",
         "/resources/fr.mos.ru.js",
         "/resources/init.js",
+        "/resources/module/geometric-tools.js",
         "/resources/notifications.js",
         "/resources/event.object.js",
         "/resources/module/check.address.js",

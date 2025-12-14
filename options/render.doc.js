@@ -43,6 +43,12 @@
             link: "/options/module/fr.mos.ru.html",
             module: true,
             setting_name: "open-services"
+          },
+          {
+            label: "Конвертер GPX",
+            link: "/options/module/gpx-converter.html",
+            module: true,
+            setting_name: "gpx-converter"
           }
         ]
       },

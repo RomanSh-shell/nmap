@@ -1,8 +1,4 @@
-/*
- * Основной JavaScript-модуль для конвертера треков Any2Nmap.
- * Логика формирования JSON полностью соответствует оригинальному скрипту gpx2nmap.py.
- * Добавлена поддержка OSM.
- */
+'use strict';
 
 window.addEventListener('load', () => {
 
