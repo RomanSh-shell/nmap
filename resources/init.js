@@ -110,28 +110,43 @@
 
 
   /**
-   * Симуляция нажатия
-   * @param node - Node-элемент на который нужно симулировать нажатие
-   * @param eventType - Вид симулируемого события
+   * Вызывает необходимые события для симуляции нажатия на DOM-элемент.
+   * @param {jQuery} element - Элемент, на который нужно симулировать нажатие.
    */
+  const triggerClick = (element) => {
+    const node = element[0];
+    if (!node) return;
 
-  const triggerMouseEvent = (node, eventType) => {
-    let clickEvent = document.createEvent('MouseEvents');
-    clickEvent.initEvent(eventType, true, true);
-    node.dispatchEvent(clickEvent);
+    ['mouseover', 'mousedown', 'mouseup', 'click'].forEach(eventType => {
+        const event = new MouseEvent(eventType, {
+            bubbles: true,
+            cancelable: true,
+            view: window
+        });
+        node.dispatchEvent(event);
+    });
   };
 
-
   /**
-   * Вызывает необходимые события для симуляции нажатия
-   * @param element - Элемент на который нужно симулировать нажатие
+   * Эмуляция клика в координатах экрана
+   * @param x - Координата X
+   * @param y - Координата Y
    */
+  const simulateClickByPoint = (x, y) => {
+    const el = document.elementFromPoint(x, y);
+    if (!el) return;
 
-  const triggerClick = (element) => {
-    triggerMouseEvent(element[0], "mouseover");
-    triggerMouseEvent(element[0], "mousedown");
-    triggerMouseEvent(element[0], "mouseup");
-    triggerMouseEvent(element[0], "click");
+    ['mousedown', 'mouseup', 'click'].forEach(evtType => {
+        const evt = new MouseEvent(evtType, {
+            bubbles: true,
+            cancelable: true,
+            view: window,
+            clientX: x,
+            clientY: y,
+            button: 0
+        });
+        el.dispatchEvent(evt);
+    });
   };
 
 
@@ -555,6 +570,7 @@
     creatElement: creatElement,
     popupShow: popupShow,
     triggerClick: triggerClick,
+    simulateClickByPoint: simulateClickByPoint,
     getStatusCategory: getStatusCategory
   };
 
