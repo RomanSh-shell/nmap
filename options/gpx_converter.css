@@ -1,6 +1,0 @@
-.container { max-width: 400px; font-family: sans-serif; padding: 1em; }
-.input-group { margin-bottom: 1em; }
-label { display: block; margin-bottom: 0.5em; }
-input[type="text"], input[type="file"] { width: 100%; padding: 0.5em; box-sizing: border-box; }
-button { padding: 0.7em 1.5em; cursor: pointer; width: 100%; }
-#status { margin-top: 1em; font-weight: bold; }

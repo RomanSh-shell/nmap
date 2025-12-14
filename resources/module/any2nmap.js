@@ -26,7 +26,14 @@ window.addEventListener('load', () => {
         }
         chrome.identity.getAuthToken({ interactive: interactive }, (token) => {
             if (chrome.runtime.lastError || !token) {
-                const errorMessage = chrome.i18n.getMessage('statusAuthFailure') + (chrome.runtime.lastError ? ` ${chrome.runtime.lastError.message}` : '');
+                let errorMessage = chrome.i18n.getMessage('statusAuthFailure');
+                if (chrome.runtime.lastError) {
+                    if (chrome.runtime.lastError.message.includes("The user turned off browser signin")) {
+                        errorMessage = chrome.i18n.getMessage('errorBrowserSignin');
+                    } else {
+                        errorMessage += `: ${chrome.runtime.lastError.message}`;
+                    }
+                }
                 statusDiv.textContent = errorMessage;
                 authBlock.style.display = 'block';
                 appDiv.style.display = 'none';
