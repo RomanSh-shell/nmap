@@ -28,10 +28,11 @@ window.addEventListener('load', () => {
             if (chrome.runtime.lastError || !token) {
                 let errorMessage = chrome.i18n.getMessage('statusAuthFailure');
                 if (chrome.runtime.lastError) {
-                    if (chrome.runtime.lastError.message.includes("The user turned off browser signin")) {
+                    const msg = chrome.runtime.lastError.message;
+                    if (msg.includes("The user turned off browser signin") || msg.includes("The user is not signed in")) {
                         errorMessage = chrome.i18n.getMessage('errorBrowserSignin');
                     } else {
-                        errorMessage += `: ${chrome.runtime.lastError.message}`;
+                        errorMessage += `: ${msg}`;
                     }
                 }
                 statusDiv.textContent = errorMessage;

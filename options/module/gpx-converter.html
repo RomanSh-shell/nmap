@@ -1,12 +1,7 @@
 <link href="/options/module/gpx_converter.css" rel="stylesheet"/>
 <h1 data-i18n="appName"></h1>
 
-<div id="auth-block">
-    <p data-i18n="loginRequired"></p>
-    <button id="login-yandex" data-i18n="loginButton"></button>
-</div>
-
-<div id="app" style="display: none;">
+<div id="app">
     <div class="input-group">
         <label for="file-input" data-i18n="fileSelectionLabel"></label>
         <input type="file" id="file-input" accept=".gpx,.kml,.kmz,.csv,.osm">
@@ -18,11 +13,24 @@
     </div>
 
     <div class="input-group">
-        <button id="convert-upload" data-i18n="convertButton"></button>
+        <button id="convert-btn" data-i18n="convertButtonOnly"></button>
     </div>
 </div>
 
 <div id="status"></div>
+
+<div id="results-block" class="results" style="display: none;">
+    <p data-i18n="manualUploadInstruction"></p>
+    <a id="download-link" href="#" download="index.json" class="button" data-i18n="downloadButton"></a>
+    <hr>
+    <p data-i18n="autoUploadInstruction"></p>
+    <button id="upload-btn" data-i18n="uploadButton" disabled></button>
+</div>
+
+<div id="auth-block">
+    <p id="auth-status" data-i18n="loginForUpload"></p>
+    <button id="login-yandex" data-i18n="loginButton"></button>
+</div>
 
 <script src="/jszip.min.js"></script>
 <script src="/osmtogeojson.js"></script>
