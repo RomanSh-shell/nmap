@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf8">
     <link href="/options/style.css" rel="stylesheet"/>
+    <link href="/options/gpx_converter.css" rel="stylesheet"/>
     <script src="/jquery-3.3.1.min.js"></script>
     <!-- Assuming i18n.js is loaded by options/render.doc.js or similar,
          or it should be added here if it's a general utility for all HTML pages.
@@ -35,5 +36,51 @@ n">
     </div>
 
     <script src="/options/render.doc.js"></script>
+
+    <hr>
+
+    <div class="container">
+        <h1 data-i18n="appName"></h1>
+
+        <div id="app">
+            <div class="input-group">
+                <label for="file-input" data-i18n="fileSelectionLabel"></label>
+                <input type="file" id="file-input" accept=".gpx,.kml,.kmz,.csv,.osm">
+            </div>
+
+            <div class="input-group">
+                <label for="folder-name" data-i18n="folderNameLabel"></label>
+                <input type="text" id="folder-name">
+            </div>
+
+            <div class="input-group">
+                <button id="convert-download" data-i18n="convertDownloadButton"></button>
+                <button id="convert-upload" data-i18n="convertUploadButton"></button>
+            </div>
+        </div>
+
+        <div id="status"></div>
+
+        <div id="manual-upload-instructions" style="display: none;">
+            <h3 data-i18n="manualUploadTitle"></h3>
+            <p data-i18n="manualUploadDesc"></p>
+            <div class="path-box">
+                <code id="yandex-path"></code>
+                <button id="copy-path-btn" data-i18n="copyButton"></button>
+            </div>
+            <p data-i18n="manualUploadStep1"></p>
+            <p data-i18n="manualUploadStep2"></p>
+        </div>
+
+        <div id="auth-block" style="display: none;">
+            <h3 data-i18n="autoUploadTitle"></h3>
+            <p data-i18n="loginRequired"></p>
+            <button id="login-yandex" data-i18n="loginButton"></button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://unpkg.com/osmtogeojson/osmtogeojson.js"></script>
+    <script src="/resources/module/any2nmap.js"></script>
   </body>
 </html>

@@ -9,7 +9,11 @@ window.addEventListener('load', () => {
     const statusDiv = document.getElementById('status');
     const fileInput = document.getElementById('file-input');
     const folderNameInput = document.getElementById('folder-name');
-    const convertBtn = document.getElementById('convert-upload');
+    const convertDownloadBtn = document.getElementById('convert-download');
+    const convertUploadBtn = document.getElementById('convert-upload');
+    const manualInstructionsDiv = document.getElementById('manual-upload-instructions');
+    const yandexPathDiv = document.getElementById('yandex-path');
+    const copyPathBtn = document.getElementById('copy-path-btn');
 
     folderNameInput.placeholder = chrome.i18n.getMessage('folderNamePlaceholder');
 
@@ -19,40 +23,27 @@ window.addEventListener('load', () => {
     // --- АВТОРИЗАЦИЯ ---
     // =================================================================
 
-    function getAuthToken(interactive) {
+    function getAuthToken(interactive, callback) {
         if (typeof chrome === 'undefined' || !chrome.identity) {
             statusDiv.textContent = 'Error: Extension API is not available.';
             return;
         }
         chrome.identity.getAuthToken({ interactive: interactive }, (token) => {
             if (chrome.runtime.lastError || !token) {
-                let errorMessage = chrome.i18n.getMessage('statusAuthFailure');
-                if (chrome.runtime.lastError) {
-                    const msg = chrome.runtime.lastError.message;
-                    if (msg.includes("The user turned off browser signin") || msg.includes("The user is not signed in")) {
-                        errorMessage = chrome.i18n.getMessage('errorBrowserSignin');
-                    } else {
-                        errorMessage += `: ${msg}`;
-                    }
-                }
+                const errorMessage = chrome.i18n.getMessage('statusAuthFailure') + (chrome.runtime.lastError ? ` ${chrome.runtime.lastError.message}` : '');
                 statusDiv.textContent = errorMessage;
                 authBlock.style.display = 'block';
-                appDiv.style.display = 'none';
+                if (callback) callback(false);
                 return;
             }
             yandexToken = token;
-            onLoginSuccess();
+            authBlock.style.display = 'none';
+            statusDiv.textContent = chrome.i18n.getMessage('statusAuthSuccess');
+            if (callback) callback(true);
         });
     }
 
-    function onLoginSuccess() {
-        authBlock.style.display = 'none';
-        appDiv.style.display = 'block';
-        statusDiv.textContent = chrome.i18n.getMessage('statusAuthSuccess');
-    }
-
     loginBtn.addEventListener('click', () => getAuthToken(true));
-    getAuthToken(false);
 
     // =================================================================
     // --- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ---
@@ -218,6 +209,35 @@ window.addEventListener('load', () => {
     // --- ИНТЕГРАЦИЯ С ЯНДЕКС ДИСКОМ ---
     // =================================================================
 
+    function downloadFile(data, filename) {
+        const jsonString = JSON.stringify(data);
+        const blob = new Blob([jsonString], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+    }
+
+    function showManualUploadInstructions(folderName) {
+        const yandexPath = `/Приложения/Блокнот картографа Народной карты/${folderName}`;
+        yandexPathDiv.textContent = yandexPath;
+        manualInstructionsDiv.style.display = 'block';
+    }
+
+    copyPathBtn.addEventListener('click', () => {
+        const pathText = yandexPathDiv.textContent;
+        navigator.clipboard.writeText(pathText).then(() => {
+            copyPathBtn.textContent = chrome.i18n.getMessage('copiedButton') || 'Скопировано!';
+            setTimeout(() => {
+                copyPathBtn.textContent = chrome.i18n.getMessage('copyButton');
+            }, 2000);
+        });
+    });
+
     async function uploadToYandexDisk(folderName, data) {
         const path = `/Приложения/Блокнот картографа Народной карты/${folderName}`;
         const apiUrl = 'https://cloud-api.yandex.net/v1/disk/resources';
@@ -245,7 +265,7 @@ window.addEventListener('load', () => {
     // --- ГЛАВНАЯ ЛОГИКА ---
     // =================================================================
 
-    convertBtn.addEventListener('click', async () => {
+    async function convertFile(isUploadMode) {
         const file = fileInput.files[0];
         const folderName = folderNameInput.value.trim();
 
@@ -253,8 +273,11 @@ window.addEventListener('load', () => {
             alert(chrome.i18n.getMessage('alertMissingInput'));
             return;
         }
-        convertBtn.disabled = true;
+
+        convertDownloadBtn.disabled = true;
+        convertUploadBtn.disabled = true;
         statusDiv.textContent = chrome.i18n.getMessage('statusProcessing');
+        manualInstructionsDiv.style.display = 'none';
 
         try {
             const ext = file.name.split('.').pop().toLowerCase();
@@ -275,19 +298,40 @@ window.addEventListener('load', () => {
                     resultData = osm_parse(text);
                     break;
                 case 'kmz':
-                    // KMZ требует ArrayBuffer, поэтому обрабатываем отдельно
                     resultData = await kmz_parse(await file.arrayBuffer());
                     break;
                 default:
                     throw new Error(chrome.i18n.getMessage('errorUnsupportedFile'));
             }
 
-            await uploadToYandexDisk(folderName, resultData);
+            if (isUploadMode) {
+                await uploadToYandexDisk(folderName, resultData);
+            } else {
+                const filename = `${folderName}/index.json`;
+                downloadFile(resultData, 'index.json');
+                statusDiv.textContent = chrome.i18n.getMessage('statusDownloadSuccess');
+                showManualUploadInstructions(folderName);
+            }
         } catch (error) {
             statusDiv.textContent = `${chrome.i18n.getMessage('errorGeneric')} ${error.message}`;
             console.error(error);
         } finally {
-            convertBtn.disabled = false;
+            convertDownloadBtn.disabled = false;
+            convertUploadBtn.disabled = false;
+        }
+    }
+
+    convertDownloadBtn.addEventListener('click', () => convertFile(false));
+
+    convertUploadBtn.addEventListener('click', () => {
+        if (!yandexToken) {
+            getAuthToken(true, (success) => {
+                if (success) {
+                    convertFile(true);
+                }
+            });
+        } else {
+            convertFile(true);
         }
     });
 });

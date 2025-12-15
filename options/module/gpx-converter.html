@@ -13,22 +13,27 @@
     </div>
 
     <div class="input-group">
-        <button id="convert-btn" data-i18n="convertButtonOnly"></button>
+        <button id="convert-download" data-i18n="convertDownloadButton"></button>
+        <button id="convert-upload" data-i18n="convertUploadButton"></button>
     </div>
 </div>
 
 <div id="status"></div>
 
-<div id="results-block" class="results" style="display: none;">
-    <p data-i18n="manualUploadInstruction"></p>
-    <a id="download-link" href="#" download="index.json" class="button" data-i18n="downloadButton"></a>
-    <hr>
-    <p data-i18n="autoUploadInstruction"></p>
-    <button id="upload-btn" data-i18n="uploadButton" disabled></button>
+<div id="manual-upload-instructions" style="display: none;">
+    <h3 data-i18n="manualUploadTitle"></h3>
+    <p data-i18n="manualUploadDesc"></p>
+    <div class="path-box">
+        <code id="yandex-path"></code>
+        <button id="copy-path-btn" data-i18n="copyButton"></button>
+    </div>
+    <p data-i18n="manualUploadStep1"></p>
+    <p data-i18n="manualUploadStep2"></p>
 </div>
 
-<div id="auth-block">
-    <p id="auth-status" data-i18n="loginForUpload"></p>
+<div id="auth-block" style="display: none;">
+    <h3 data-i18n="autoUploadTitle"></h3>
+    <p data-i18n="loginRequired"></p>
     <button id="login-yandex" data-i18n="loginButton"></button>
 </div>
 
