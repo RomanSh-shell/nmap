@@ -854,9 +854,12 @@
   "folderNameLabel": { "message": "2. Enter a name for the folder on Yandex Disk" },
   "folderNamePlaceholder": { "message": "e.g., 2023-10-27_walk" },
   "convertButton": { "message": "3. Convert and Upload" },
+  "convertDownloadButton": { "message": "Convert and Download" },
+  "convertUploadButton": { "message": "Convert and Upload to Disk" },
   "statusAuthSuccess": { "message": "You are authorized! Select a file." },
   "statusAuthFailure": { "message": "Authorization failed." },
   "statusProcessing": { "message": "Processing file..." },
+  "statusDownloading": { "message": "Done! File will be downloaded..." },
   "statusCreatingFolder": { "message": "Creating folder on Disk..." },
   "statusGettingUrl": { "message": "Getting upload link..." },
   "statusUploading": { "message": "Uploading index.json..." },
@@ -867,5 +870,13 @@
   "errorCsvColumns": { "message": "Could not find latitude/longitude columns in CSV." },
   "errorGetUploadUrl": { "message": "Failed to get upload link." },
   "errorFileUpload": { "message": "Error during file upload." },
-  "alertMissingInput": { "message": "Please select a file and enter a folder name." }
+  "alertMissingInput": { "message": "Please select a file and enter a folder name." },
+  "manualUploadTitle": { "message": "Upload file to Yandex.Disk manually" },
+  "manualUploadDesc": { "message": "File saved locally. You can upload it to Yandex.Disk manually using the path below:" },
+  "copyButton": { "message": "Copy path" },
+  "copiedButton": { "message": "Copied!" },
+  "manualUploadStep1": { "message": "Open Yandex.Disk and create a folder with the name above if it doesn't exist." },
+  "manualUploadStep2": { "message": "Put the downloaded index.json file in that folder. The application will find it automatically." },
+  "autoUploadTitle": { "message": "Auto-upload to Disk" },
+  "statusDownloadSuccess": { "message": "Done! The converted file has been downloaded. See instructions below to upload to Yandex.Disk." }
 }

@@ -2,5 +2,16 @@
 .input-group { margin-bottom: 1em; }
 label { display: block; margin-bottom: 0.5em; }
 input[type="text"], input[type="file"] { width: 100%; padding: 0.5em; box-sizing: border-box; }
-button { padding: 0.7em 1.5em; cursor: pointer; width: 100%; }
-#status { margin-top: 1em; font-weight: bold; }
+button { padding: 0.7em 1.5em; cursor: pointer; }
+.input-group button { width: 100%; margin-bottom: 0.5em; }
+.input-group button:last-child { margin-bottom: 0; }
+#status { margin-top: 1em; font-weight: bold; padding: 0.5em; border-radius: 4px; }
+#manual-upload-instructions { margin-top: 2em; padding: 1em; background-color: #f0f8ff; border-left: 4px solid #4CAF50; border-radius: 4px; }
+#manual-upload-instructions h3 { margin-top: 0; color: #2c3e50; }
+#manual-upload-instructions p { margin: 0.5em 0; line-height: 1.5; }
+.path-box { background-color: #f5f5f5; padding: 0.8em; border-radius: 4px; border: 1px solid #ddd; margin: 1em 0; word-break: break-all; display: flex; justify-content: space-between; align-items: center; }
+.path-box code { flex: 1; font-family: 'Courier New', monospace; font-size: 0.9em; }
+#copy-path-btn { width: auto; padding: 0.5em 1em; margin-left: 0.5em; }
+#auth-block { margin-top: 2em; padding: 1em; background-color: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px; }
+#auth-block h3 { margin-top: 0; color: #856404; }
+#auth-block button { width: 100%; }

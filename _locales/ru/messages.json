@@ -854,9 +854,12 @@
   "folderNameLabel": { "message": "2. Введите название для папки на Яндекс Диске" },
   "folderNamePlaceholder": { "message": "например, 2023-10-27_прогулка" },
   "convertButton": { "message": "3. Конвертировать и загрузить" },
+  "convertDownloadButton": { "message": "Конвертировать и скачать" },
+  "convertUploadButton": { "message": "Конвертировать и загрузить на Диск" },
   "statusAuthSuccess": { "message": "Вы авторизованы! Выберите файл." },
   "statusAuthFailure": { "message": "Авторизация не удалась." },
   "statusProcessing": { "message": "Обработка файла..." },
+  "statusDownloading": { "message": "Готово! Файл будет скачан..." },
   "statusCreatingFolder": { "message": "Создаю папку на Диске..." },
   "statusGettingUrl": { "message": "Получаю ссылку для загрузки..." },
   "statusUploading": { "message": "Загружаю index.json..." },
@@ -867,5 +870,13 @@
   "errorCsvColumns": { "message": "Не удалось найти столбцы широты/долготы в CSV." },
   "errorGetUploadUrl": { "message": "Не удалось получить ссылку для загрузки." },
   "errorFileUpload": { "message": "Ошибка при загрузке файла." },
-  "alertMissingInput": { "message": "Выберите файл и введите имя папки." }
+  "alertMissingInput": { "message": "Выберите файл и введите имя папки." },
+  "manualUploadTitle": { "message": "Загрузить файл на Яндекс.Диск вручную" },
+  "manualUploadDesc": { "message": "Файл сохранён локально. Вы можете загрузить его на Яндекс.Диск вручную, используя указанный ниже путь:" },
+  "copyButton": { "message": "Копировать путь" },
+  "copiedButton": { "message": "Скопировано!" },
+  "manualUploadStep1": { "message": "Откройте Яндекс.Диск и создайте папку с названием из поля выше, если её ещё нет." },
+  "manualUploadStep2": { "message": "Положите скачанный файл index.json в эту папку. Приложение найдёт его автоматически." },
+  "autoUploadTitle": { "message": "Автоматическая загрузка на Диск" },
+  "statusDownloadSuccess": { "message": "Готово! Конвертированный файл скачан. Смотрите инструкции ниже для загрузки на Яндекс.Диск." }
 }
