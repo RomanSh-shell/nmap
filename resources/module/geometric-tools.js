@@ -1,22 +1,20 @@
 'use strict';
 
 (function() {
-    // === КОНФИГУРАЦИЯ И СОСТОЯНИЕ ===
     const CONFIG = {
-        drawDelay: 50, // мс между кликами
+        drawDelay: 50,
     };
 
     let state = {
-        tool: null, // 'arc', 'entrance', 'centerSegment', 'centerCircle'
+        tool: null,
         points: []
     };
 
-    // Используем существующую систему уведомлений
     function showError(msg) {
         if (window.appChrome && window.appChrome.notification) {
             window.appChrome.notification('error', msg);
         } else {
-            alert(msg); // Fallback
+            alert(msg);
         }
     }
 
@@ -25,8 +23,6 @@
             window.appChrome.notification('info', msg);
         }
     }
-
-    // === МАТЕМАТИЧЕСКИЕ ФУНКЦИИ ===
 
     function getDistance(p1, p2) {
         return Math.hypot(p1.x - p2.x, p1.y - p2.y);
@@ -103,7 +99,6 @@
         return points;
     }
 
-    // Используем существующую функцию симуляции клика
     function simulateClick(x, y) {
         if (window.appChrome && window.appChrome.simulateClickByPoint) {
             window.appChrome.simulateClickByPoint(x, y);
@@ -120,17 +115,16 @@
     }
 
     function resetState() {
-        if (state.tool) showInfo(chrome.i18n.getMessage('geometricToolReset'));
+        if (state.tool) showInfo(chrome.i18n.getMessage('gt_label_reset'));
         state.tool = null;
         state.points = [];
     }
 
-    // === ИНСТРУМЕНТЫ ===
     function toolCenterSegment() {
         if (state.points.length < 2) return;
         let center = getMidPoint(state.points[0], state.points[1]);
         simulateHover(center.x, center.y);
-        showInfo(chrome.i18n.getMessage('geometricToolCursorCentered'));
+        showInfo(chrome.i18n.getMessage('gt_label_cursor_centered'));
         resetState();
     }
 
@@ -139,23 +133,23 @@
         let center = getCircleCenter(state.points[0], state.points[1], state.points[2]);
         if (center) {
             simulateHover(center.x, center.y);
-            showInfo(chrome.i18n.getMessage('geometricToolCircleCentered'));
+            showInfo(chrome.i18n.getMessage('gt_label_circle_centered'));
         } else {
-            showError(chrome.i18n.getMessage('geometricToolCenterError'));
+            showError(chrome.i18n.getMessage('gt_label_center_error'));
         }
         resetState();
     }
 
     function toolEntrances() {
         if (state.points.length < 2) return;
-        let countStr = prompt(chrome.i18n.getMessage('geometricToolEntrancesPrompt'), "5");
+        let countStr = prompt(chrome.i18n.getMessage('gt_label_entrances_prompt'), "5");
         if (countStr === null) {
             resetState();
             return;
         }
         let n = parseInt(countStr);
         if (isNaN(n) || n < 1) {
-            showError(chrome.i18n.getMessage('geometricToolInvalidNumber'));
+            showError(chrome.i18n.getMessage('gt_label_invalid_number'));
             resetState();
             return;
         }
@@ -178,7 +172,7 @@
     function toolArc() {
         if (state.points.length < 3) return;
         let arcPoints = getArcPoints(state.points[0], state.points[1], state.points[2]);
-        showInfo(chrome.i18n.getMessage('geometricToolDrawingNodes', [arcPoints.length]));
+        showInfo(chrome.i18n.getMessage('gt_label_drawing_nodes', [arcPoints.length]));
         arcPoints.forEach((pt, idx) => {
             setTimeout(() => {
                 simulateClick(pt.x, pt.y);
@@ -187,7 +181,6 @@
         resetState();
     }
 
-    // === ОБРАБОТЧИКИ СОБЫТИЙ ===
     document.addEventListener('keydown', (e) => {
         if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
         if (e.code === 'Escape') {
@@ -198,25 +191,25 @@
             e.preventDefault();
             state.tool = 'centerSegment';
             state.points = [];
-            showInfo(chrome.i18n.getMessage('geometricToolCenterSegmentHelp'));
+            showInfo(chrome.i18n.getMessage('gt_label_center_segment_help'));
         }
         if (e.altKey && e.shiftKey && e.code === 'KeyC') {
             e.preventDefault();
             state.tool = 'centerCircle';
             state.points = [];
-            showInfo(chrome.i18n.getMessage('geometricToolCenterCircleHelp'));
+            showInfo(chrome.i18n.getMessage('gt_label_center_circle_help'));
         }
         if (e.altKey && !e.shiftKey && e.code === 'KeyE') {
             e.preventDefault();
             state.tool = 'entrance';
             state.points = [];
-            showInfo(chrome.i18n.getMessage('geometricToolEntrancesHelp'));
+            showInfo(chrome.i18n.getMessage('gt_label_entrances_help'));
         }
         if (e.altKey && e.code === 'KeyD') {
             e.preventDefault();
             state.tool = 'arc';
             state.points = [];
-            showInfo(chrome.i18n.getMessage('geometricToolArcHelp'));
+            showInfo(chrome.i18n.getMessage('gt_label_arc_help'));
         }
     });
 
@@ -227,7 +220,7 @@
         if (state.tool === 'centerSegment' || state.tool === 'entrance') required = 2;
         if (state.tool === 'centerCircle' || state.tool === 'arc') required = 3;
         if (state.points.length < required) {
-            showInfo(chrome.i18n.getMessage('geometricToolPointProgress', [state.points.length, required]));
+            showInfo(chrome.i18n.getMessage('gt_label_point_progress', [state.points.length, required]));
         } else {
             switch(state.tool) {
                 case 'centerSegment': toolCenterSegment(); break;
