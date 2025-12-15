@@ -120,7 +120,7 @@
     }
 
     function resetState() {
-        if (state.tool) showInfo("Инструмент сброшен");
+        if (state.tool) showInfo(chrome.i18n.getMessage('geometricToolReset'));
         state.tool = null;
         state.points = [];
     }
@@ -130,7 +130,7 @@
         if (state.points.length < 2) return;
         let center = getMidPoint(state.points[0], state.points[1]);
         simulateHover(center.x, center.y);
-        showInfo("Курсор наведен на центр");
+        showInfo(chrome.i18n.getMessage('geometricToolCursorCentered'));
         resetState();
     }
 
@@ -139,23 +139,23 @@
         let center = getCircleCenter(state.points[0], state.points[1], state.points[2]);
         if (center) {
             simulateHover(center.x, center.y);
-            showInfo("Курсор наведен на центр окружности");
+            showInfo(chrome.i18n.getMessage('geometricToolCircleCentered'));
         } else {
-            showError("Невозможно найти центр (точки на одной прямой)");
+            showError(chrome.i18n.getMessage('geometricToolCenterError'));
         }
         resetState();
     }
 
     function toolEntrances() {
         if (state.points.length < 2) return;
-        let countStr = prompt("Разметка подъездов\nВведите количество подъездов:", "5");
+        let countStr = prompt(chrome.i18n.getMessage('geometricToolEntrancesPrompt'), "5");
         if (countStr === null) {
             resetState();
             return;
         }
         let n = parseInt(countStr);
         if (isNaN(n) || n < 1) {
-            showError("Некорректное число");
+            showError(chrome.i18n.getMessage('geometricToolInvalidNumber'));
             resetState();
             return;
         }
@@ -178,7 +178,7 @@
     function toolArc() {
         if (state.points.length < 3) return;
         let arcPoints = getArcPoints(state.points[0], state.points[1], state.points[2]);
-        showInfo(`Рисуем ${arcPoints.length} узлов...`);
+        showInfo(chrome.i18n.getMessage('geometricToolDrawingNodes', [arcPoints.length]));
         arcPoints.forEach((pt, idx) => {
             setTimeout(() => {
                 simulateClick(pt.x, pt.y);
@@ -198,25 +198,25 @@
             e.preventDefault();
             state.tool = 'centerSegment';
             state.points = [];
-            showInfo("Инструмент: Центр отрезка. Кликните 2 точки.");
+            showInfo(chrome.i18n.getMessage('geometricToolCenterSegmentHelp'));
         }
         if (e.altKey && e.shiftKey && e.code === 'KeyC') {
             e.preventDefault();
             state.tool = 'centerCircle';
             state.points = [];
-            showInfo("Инструмент: Центр окружности. Кликните 3 точки.");
+            showInfo(chrome.i18n.getMessage('geometricToolCenterCircleHelp'));
         }
         if (e.altKey && !e.shiftKey && e.code === 'KeyE') {
             e.preventDefault();
             state.tool = 'entrance';
             state.points = [];
-            showInfo("Инструмент: Подъезды. Кликните начало и конец.");
+            showInfo(chrome.i18n.getMessage('geometricToolEntrancesHelp'));
         }
         if (e.altKey && e.code === 'KeyD') {
             e.preventDefault();
             state.tool = 'arc';
             state.points = [];
-            showInfo("Инструмент: Дуга по 3 точкам. (1:Старт, 2:Изгиб, 3:Финиш)");
+            showInfo(chrome.i18n.getMessage('geometricToolArcHelp'));
         }
     });
 
@@ -227,7 +227,7 @@
         if (state.tool === 'centerSegment' || state.tool === 'entrance') required = 2;
         if (state.tool === 'centerCircle' || state.tool === 'arc') required = 3;
         if (state.points.length < required) {
-            showInfo(`Точка ${state.points.length} / ${required}`);
+            showInfo(chrome.i18n.getMessage('geometricToolPointProgress', [state.points.length, required]));
         } else {
             switch(state.tool) {
                 case 'centerSegment': toolCenterSegment(); break;

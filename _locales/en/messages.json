@@ -195,11 +195,11 @@
     "message": "$1 more $2",
     "placeholders": {
       "1": {
-        "content": "$1",
+        "content": "",
         "example": "EX1"
       },
       "2": {
-        "content": "$2",
+        "content": "",
         "example": "EX2"
       }
     }
@@ -385,7 +385,7 @@
     "message": "Good afternoon, $1!\n\nUnfortunately, you ignore the moderator's comments and continue to make mistakes when edit the map. Please reply to me at [Yandex.Messenger](https://yandex.com/chat#/) and I will remove the blockage early.",
     "placeholders": {
       "1": {
-        "content": "$1",
+        "content": "",
         "example": "EX1"
       }
     }
@@ -397,7 +397,7 @@
     "message": "Good afternoon, $1!\n\nUnfortunately, I have not been able to contact you through [Yandex.Messenger](https://yandex.com/chat#/). Please remove the restriction and email me, and then I will remove the lock early.",
     "placeholders": {
       "1": {
-        "content": "$1",
+        "content": "",
         "example": "EX1"
       }
     }
@@ -409,7 +409,7 @@
     "message": "Good afternoon, $1!\n\nUnfortunately, you make many mistakes when edit objects, despite them being explained to you.\n\nPlease study [rules](https://yandex.com/support/mapeditor/) for the blocking time, so as not to make mistakes in the future.",
     "placeholders": {
       "1": {
-        "content": "$1",
+        "content": "",
         "example": "EX1"
       }
     }
@@ -424,7 +424,7 @@
     "message": "Good afternoon, $1!\n\nIn Yandex Map Editor prohibits the use of profanity in comments or profile. Please reconsider your attitude to cartography and study [rules] during the blocking period(https://yandex.com/support/mapeditor/)",
     "placeholders": {
       "1": {
-        "content": "$1",
+        "content": "",
         "example": "EX1"
       }
     }
@@ -433,7 +433,7 @@
     "message": "Good afternoon, $1!\n\nIn Yandex Map Editor prohibits the use of statements directed at inciting hatred or enmity, or at disparagement of a person or group of persons.\n\nPlease reconsider your attitude to cartography and study [rules] during the blocking period(https://yandex.com/support/mapeditor/)",
     "placeholders": {
       "1": {
-        "content": "$1",
+        "content": "",
         "example": "EX1"
       }
     }
@@ -442,7 +442,7 @@
     "message": "Good afternoon, $1!\n\nUnfortunately, your edits are considered vandalism, so your profile is permanently blocked.",
     "placeholders": {
       "1": {
-        "content": "$1",
+        "content": "",
         "example": "EX1"
       }
     }
@@ -454,7 +454,7 @@
     "message": "Good afternoon, $1!\n\nUnfortunately, your profile is recognized as a copy of another one, of a blocked profile.",
     "placeholders": {
       "1": {
-        "content": "$1",
+        "content": "",
         "example": "EX1"
       }
     }
@@ -824,11 +824,11 @@
     "message": "from $1$ to $2$",
     "placeholders": {
       "1": {
-        "content": "$1",
+        "content": "",
         "example": "EX1"
       },
       "2": {
-        "content": "$2",
+        "content": "",
         "example": "EX2"
       }
     }
@@ -837,7 +837,7 @@
     "message": "Indefinitely from $1$",
     "placeholders": {
       "1": {
-        "content": "$1",
+        "content": "",
         "example": "EX1"
       }
     }
@@ -878,5 +878,18 @@
   "manualUploadStep1": { "message": "Open Yandex.Disk and create a folder with the name above if it doesn't exist." },
   "manualUploadStep2": { "message": "Put the downloaded index.json file in that folder. The application will find it automatically." },
   "autoUploadTitle": { "message": "Auto-upload to Disk" },
-  "statusDownloadSuccess": { "message": "Done! The converted file has been downloaded. See instructions below to upload to Yandex.Disk." }
+  "statusDownloadSuccess": { "message": "Done! The converted file has been downloaded. See instructions below to upload to Yandex.Disk." },
+  "geometricTools": { "message": "Geometric tools" },
+  "geometricToolsDescription": { "message": "Adds new tools for working with object geometry." },
+  "gt.label.select_mode": { "message": "Select mode" },
+  "gt.label.create_line": { "message": "Create line" },
+  "gt.label.create_polygon": { "message": "Create polygon" },
+  "gt.label.object_info": { "message": "Object info" },
+  "gt.label.show_distance": { "message": "Show distance" },
+  "gt.label.show_angle": { "message": "Show angle" },
+  "gt.label.show_coordinates": { "message": "Show coordinates" },
+  "gt.label.paraller_line": { "message": "Paraller line" },
+  "gt.label.perpendicular_line": { "message": "Perpendicular line" },
+  "gt.label.points_on_line": { "message": "Points on line" },
+  "gt.label.split_line": { "message": "Split line" }
 }
