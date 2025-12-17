@@ -17,33 +17,55 @@ window.addEventListener('load', () => {
 
     folderNameInput.placeholder = chrome.i18n.getMessage('folderNamePlaceholder');
 
-    let yandexToken = null;
-
     // =================================================================
     // --- АВТОРИЗАЦИЯ ---
     // =================================================================
 
-    function getAuthToken(interactive, callback) {
-        if (typeof chrome === 'undefined' || !chrome.identity) {
-            statusDiv.textContent = 'Error: Extension API is not available.';
-            return;
-        }
-        chrome.identity.getAuthToken({ interactive: interactive }, (token) => {
-            if (chrome.runtime.lastError || !token) {
+    const CLIENT_ID = '81c6e7a2503a445696518a3c631a319f';
+    const REDIRECT_URL = chrome.identity.getRedirectURL();
+    const AUTH_URL = `https://oauth.yandex.ru/authorize?response_type=token&client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URL)}&scope=cloud_api:disk.write`;
+
+    function launchAuthFlow(interactive, callback) {
+        chrome.identity.launchWebAuthFlow({
+            url: AUTH_URL,
+            interactive: interactive
+        }, (redirect_url) => {
+            if (chrome.runtime.lastError || !redirect_url) {
                 const errorMessage = chrome.i18n.getMessage('statusAuthFailure') + (chrome.runtime.lastError ? ` ${chrome.runtime.lastError.message}` : '');
                 statusDiv.textContent = errorMessage;
                 authBlock.style.display = 'block';
                 if (callback) callback(false);
                 return;
             }
-            yandexToken = token;
-            authBlock.style.display = 'none';
-            statusDiv.textContent = chrome.i18n.getMessage('statusAuthSuccess');
-            if (callback) callback(true);
+
+            const url = new URL(redirect_url);
+            const params = new URLSearchParams(url.hash.substring(1));
+            const accessToken = params.get('access_token');
+
+            if (accessToken) {
+                chrome.storage.local.set({ yandex_token: accessToken }, () => {
+                    authBlock.style.display = 'none';
+                    statusDiv.textContent = chrome.i18n.getMessage('statusAuthSuccess');
+                    if (callback) callback(true);
+                });
+            } else {
+                 statusDiv.textContent = chrome.i18n.getMessage('statusAuthFailure');
+                 authBlock.style.display = 'block';
+                 if (callback) callback(false);
+            }
         });
     }
 
-    loginBtn.addEventListener('click', () => getAuthToken(true));
+    chrome.storage.local.get('yandex_token', (data) => {
+        if (data.yandex_token) {
+            authBlock.style.display = 'none';
+            statusDiv.textContent = chrome.i18n.getMessage('statusAuthSuccess');
+        } else {
+            authBlock.style.display = 'block';
+        }
+    });
+
+    loginBtn.addEventListener('click', () => launchAuthFlow(true));
 
     // =================================================================
     // --- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ---
@@ -238,7 +260,7 @@ window.addEventListener('load', () => {
         });
     });
 
-    async function uploadToYandexDisk(folderName, data) {
+    async function uploadToYandexDisk(folderName, data, yandexToken) {
         const path = `/Приложения/Блокнот картографа Народной карты/${folderName}`;
         const apiUrl = 'https://cloud-api.yandex.net/v1/disk/resources';
         const headers = { 'Authorization': `OAuth ${yandexToken}` };
@@ -305,7 +327,13 @@ window.addEventListener('load', () => {
             }
 
             if (isUploadMode) {
-                await uploadToYandexDisk(folderName, resultData);
+                chrome.storage.local.get('yandex_token', async (data) => {
+                    if (data.yandex_token) {
+                        await uploadToYandexDisk(folderName, resultData, data.yandex_token);
+                    } else {
+                        statusDiv.textContent = chrome.i18n.getMessage('statusAuthFailure');
+                    }
+                });
             } else {
                 const filename = `${folderName}/index.json`;
                 downloadFile(resultData, 'index.json');
@@ -324,14 +352,16 @@ window.addEventListener('load', () => {
     convertDownloadBtn.addEventListener('click', () => convertFile(false));
 
     convertUploadBtn.addEventListener('click', () => {
-        if (!yandexToken) {
-            getAuthToken(true, (success) => {
-                if (success) {
-                    convertFile(true);
-                }
-            });
-        } else {
-            convertFile(true);
-        }
+        chrome.storage.local.get('yandex_token', (data) => {
+            if (data.yandex_token) {
+                convertFile(true);
+            } else {
+                launchAuthFlow(true, (success) => {
+                    if (success) {
+                        convertFile(true);
+                    }
+                });
+            }
+        });
     });
 });
