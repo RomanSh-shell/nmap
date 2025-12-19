@@ -55,7 +55,9 @@
   "options_page": "index.html",
   "permissions": [
     "storage",
-    "identity",
+    "identity"
+  ],
+  "host_permissions": [
     "https://oauth.yandex.ru/*"
   ],
   "background": {
