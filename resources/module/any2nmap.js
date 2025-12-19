@@ -21,8 +21,8 @@ window.addEventListener('load', () => {
     // --- АВТОРИЗАЦИЯ ---
     // =================================================================
 
-    const CLIENT_ID = '81c6e7a2503a445696518a3c631a319f';
-    const REDIRECT_URL = chrome.identity.getRedirectURL();
+    const CLIENT_ID = '20a5e57c3a524f1984b3be55baa8b358';
+    const REDIRECT_URL = 'https://hekbkmipnmnnjcekmmajcbmhfjpobmcp.chromiumapp.org/';
     const AUTH_URL = `https://oauth.yandex.ru/authorize?response_type=token&client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URL)}&scope=cloud_api:disk.write`;
 
     function launchAuthFlow(interactive, callback) {
